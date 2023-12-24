@@ -1,0 +1,17 @@
+---
+- name: Confiugre
+  hosts: local
+
+  tasks:
+    - name: Update homebrew and upgrade all packages
+      homebrew:
+        update_homebrew: true
+        upgrade_all: true
+
+    - name: Print Host model
+      debug:
+        msg: "{{ ansible_model }}"
+
+    # - name: Install homebrew packages
+    #   homebrew:
+    #     name: "{{}}"  
