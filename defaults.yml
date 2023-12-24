@@ -1,0 +1,100 @@
+---
+all_brew_packages:
+  # DigitalOcean CTL
+  - doctl
+  # GitHub CLI
+  - gh
+  # GNU PGP
+  - gnupg
+  # Golang
+  - go
+  - gopls
+  # Helm
+  - helm
+  # JSON CLI Tool
+  - jq
+  # Kubectl
+  - kubernetes-cli
+  # Node Version Manager
+  - nvm
+  # TELNET cli
+  - telnet
+  # Git profiles switcher
+  - theykk/tap/git-switcher
+  # HashiCorp Terraform Version Manager
+  - warrensbox/tap/tfswitch
+  # Periodical command execution
+  - watch
+  # HashiCorp Vault
+  - vault
+
+
+all_brew_cask_packages:
+  # Password manager
+  - 1password
+  - 1password-cli
+  # Better display control
+  - betterdisplay
+  # Mac housekeeping tool
+  - cleanmymac
+  # Cloudflare 1.1.1.1 and WARP
+  # - cloudflare-warp
+  # Docker
+  - docker
+  # Cloud storage
+  - dropbox
+  # Google products
+  - google-chrome
+  - google-drive
+  # AI grammar checker
+  - grammarly
+  # Better terminal
+  - iterm2
+  # System monitoring
+  - istat-menus
+  # Better notes
+  - notion
+  # Mail client
+  - readdle-spark
+  # Desktop organization tool
+  - rectangle
+  # Slack client
+  - slack
+  # Music
+  - spotify
+  # Code editor
+  - visual-studio-code
+  # Media player
+  - vlc
+  # Video conferencing
+  - zoom
+
+macbook_brew_cask_packages:
+  # Battery management
+  - aldente
+
+optional_brew_cask packages:
+  # Menubar organization
+  - bartender
+  # MongoDB GUI
+  - mongodb-compass
+  # Trackpad/Mouse scrollwheel reverse tool
+  - unnaturalscrollwheels
+
+
+
+# https://support.apple.com/en-us/102852
+mac_model_identifiers:
+  # Mac Mini M1 (2020)
+  - "Macmini9,1"
+  # Mac Mini M2 (2023)
+  - "Mac14,3"
+  # Mac Mini M2 Pro (2023)
+  - "Mac14,12"
+
+# https://support.apple.com/en-us/HT201300
+macbook_model_identifiers:
+  # MacBook Pro (13-inch, 2018, Four Thunderbolt 3 ports)
+  - "MacBookPro15,2"
+  # MacBook Pro (15-inch, 2018)
+  - "MacBookPro15,1"
