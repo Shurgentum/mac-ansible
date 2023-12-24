@@ -1,0 +1,30 @@
+- name: Update homebrew
+  homebrew:
+    update_homebrew: true
+
+- name: Install homebrew packages for all machines
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ all_brew_packages }}"
+
+- name: Install homebrew cask packages for all machines
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+    sudo_password: "{{ ansible_become_password | default(omit) }}"
+  loop: "{{ all_brew_cask_packages }}"
+
+- name: Install homebrew cask packages for macbooks
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+    sudo_password: "{{ ansible_become_password | default(omit) }}"
+  loop: "{{ macbook_brew_cask_packages }}"
+  when: ansible_model in macbook_model_identifiers
+
+- name: Upgrade all packages
+  homebrew:
+    update_homebrew: true
+    upgrade_all: true
+    upgrade_options: ignore-pinned
