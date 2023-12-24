@@ -1,0 +1,16 @@
+---
+# https://support.apple.com/en-us/102852
+mac_model_identifiers:
+  # Mac Mini M1 (2020)
+  - "Macmini9,1"
+  # Mac Mini M2 (2023)
+  - "Mac14,3"
+  # Mac Mini M2 Pro (2023)
+  - "Mac14,12"
+
+# https://support.apple.com/en-us/HT201300
+macbook_model_identifiers:
+  # MacBook Pro (13-inch, 2018, Four Thunderbolt 3 ports)
+  - "MacBookPro15,2"
+  # MacBook Pro (15-inch, 2018)
+  - "MacBookPro15,1"

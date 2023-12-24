@@ -1,4 +1,5 @@
 ---
+# HomeBrew
 all_brew_packages:
   # DigitalOcean CTL
   - doctl
@@ -69,6 +70,7 @@ all_brew_cask_packages:
   # Video conferencing
   - zoom
 
+macbook_brew_packages: []
 macbook_brew_cask_packages:
   # Battery management
   - aldente
@@ -82,19 +84,23 @@ optional_brew_cask packages:
   - unnaturalscrollwheels
 
 
+# MAS
+apps:
+  # Safari Extensions
+  - {id: "1402042596", name: "ADBlock"}
+  - {id: "1439967473", name: "Okta"}
+  - {id: "1462114288", name: "Grammarly"}
 
-# https://support.apple.com/en-us/102852
-mac_model_identifiers:
-  # Mac Mini M1 (2020)
-  - "Macmini9,1"
-  # Mac Mini M2 (2023)
-  - "Mac14,3"
-  # Mac Mini M2 Pro (2023)
-  - "Mac14,12"
+  # Free apps
+  - {id: "409201541", name: "Apple Pages"}
+  - {id: "409203825", name: "Apple Numbers"}
+  - {id: "409183694", name: "Apple Keynote"}
+  - {id: "1437226581", name: "Horo timer"}
+  - {id: "747648890", name: "Telegram"}
+  - {id: "571213070", name: "DaVinci Resolve"}
 
-# https://support.apple.com/en-us/HT201300
-macbook_model_identifiers:
-  # MacBook Pro (13-inch, 2018, Four Thunderbolt 3 ports)
-  - "MacBookPro15,2"
-  # MacBook Pro (15-inch, 2018)
-  - "MacBookPro15,1"
+  # Paid apps
+  - {id: "904280696", name: "Things 3"}
+  - {id: "1289583905", name: "Pixelmator Pro"}
+
+# 989642198   MoneyCoach            (9.1.5)
