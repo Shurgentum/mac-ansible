@@ -1,0 +1,10 @@
+--- 
+- name: Install OMZ
+  include_tasks: omz.yml
+
+- name: Clone dotfiles in home directory
+  git:
+    repo: "{{ dotfiles_repo }}"
+    version: "{{ dotfiles_repo_branch }}"
+    dest: "$HOME/.dotfiles"
+

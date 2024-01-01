@@ -104,3 +104,9 @@ apps:
   - {id: "1289583905", name: "Pixelmator Pro"}
 
 # 989642198   MoneyCoach            (9.1.5)
+
+
+# DOTFILES
+
+dotfiles_repo: "https://github.com/Shurgentum/dotfiles.git"
+dotfiles_repo_branch: main
