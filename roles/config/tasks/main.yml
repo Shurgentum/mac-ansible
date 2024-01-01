@@ -1,6 +1,5 @@
 --- 
-- name: Install OMZ
-  include_tasks: omz.yml
+- import_tasks: omz.yml
 
 - name: Clone dotfiles in home directory
   git:
