@@ -1,0 +1,10 @@
+- name: Download Oh My Zsh install file
+  get_url:
+    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: /tmp/omz_install.sh
+    mode: "744"
+
+- name: Install Oh My Zsh
+  command:
+    cmd: sh /tmp/omz_install.sh
+    creates: "$HOME/.oh-my-zsh"
