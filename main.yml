@@ -8,3 +8,4 @@
   roles:
     - homebrew
     - mas
+    - config
