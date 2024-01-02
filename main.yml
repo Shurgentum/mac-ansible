@@ -6,6 +6,6 @@
     - ./defaults.yml
   
   roles:
-    - homebrew
-    - mas
+    # - homebrew
+    # - mas
     - config

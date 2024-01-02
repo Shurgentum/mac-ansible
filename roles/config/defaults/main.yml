@@ -1,2 +1,14 @@
 dotfiles_repo: ""
 dotfiles_repo_branch: main
+
+dotfiles_dest: $HOME/.dotfiles
+
+symlinks:
+  # ZSH
+  - { src: ".zsh/.zshrc", dest: "$HOME/.zshrc" }
+  - { src: ".zsh/themes/shurgentum.zsh-theme", dest: "$HOME/.oh-my-zsh/custom/themes/shurgentum.zsh-theme" }
+  # SSH
+  - { src: ".ssh/config", dest: "$HOME/.ssh/config" }
+  # GIT
+  - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Personal" }
+  - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Work" }

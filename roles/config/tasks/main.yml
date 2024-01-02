@@ -1,9 +1,16 @@
 --- 
 - import_tasks: omz.yml
+- import_tasks: git.yml
 
 - name: Clone dotfiles in home directory
   git:
     repo: "{{ dotfiles_repo }}"
     version: "{{ dotfiles_repo_branch }}"
-    dest: "$HOME/.dotfiles"
+    dest: "{{ dotfiles_dest }}"
 
+- name: Create symlinks
+  file:
+    src: "{{ dotfiles_dest }}/{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+  loop: "{{ symlinks }}"
