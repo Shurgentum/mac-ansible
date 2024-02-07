@@ -24,6 +24,10 @@ all_brew_packages:
   - theykk/tap/git-switcher
   # HashiCorp Terraform Version Manager
   - warrensbox/tap/tfswitch
+  # Terraform linter
+  - tflint
+  # Terragrunt terraform wrapper
+  - terragrunt
   # Periodical command execution
   - watch
   # HashiCorp Vault
