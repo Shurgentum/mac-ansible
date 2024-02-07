@@ -8,3 +8,10 @@
   command:
     cmd: sh /tmp/omz_install.sh
     creates: "$HOME/.oh-my-zsh"
+
+- name: Install omz plugins
+  git:
+    repo: "{{ item.repo }}"
+    version: "{{ item.branch }}"
+    dest: "{{ omz_plugins_dir }}{{ item.name }}"
+  loop: "{{ omz_plugins }}"
