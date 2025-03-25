@@ -27,4 +27,3 @@
   homebrew:
     update_homebrew: true
     upgrade_all: true
-    upgrade_options: ignore-pinned

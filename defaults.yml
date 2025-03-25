@@ -1,8 +1,6 @@
 ---
 # HomeBrew
 all_brew_packages:
-  # DigitalOcean CTL
-  - doctl
   # GitHub CLI
   - gh
   # GNU PGP
@@ -18,20 +16,12 @@ all_brew_packages:
   - kubernetes-cli
   # Node Version Manager
   - nvm
-  # TELNET cli
-  - telnet
-  # Git profiles switcher
-  - theykk/tap/git-switcher
   # HashiCorp Terraform Version Manager
   - warrensbox/tap/tfswitch
-  # Terraform linter
-  - tflint
   # Terragrunt terraform wrapper
   - terragrunt
   # Periodical command execution
   - watch
-  # HashiCorp Vault
-  - vault
 
 
 all_brew_cask_packages:
@@ -41,20 +31,13 @@ all_brew_cask_packages:
   # Better display control
   - betterdisplay
   # Mac housekeeping tool
-  - cleanmymac
+  # - cleanmymac
   # Cloudflare 1.1.1.1 and WARP
-  # - cloudflare-warp
+  - cloudflare-warp
   # Docker
   - docker
   # Cloud storage
   - dropbox
-  # Google products
-  - google-chrome
-  - google-drive
-  # AI grammar checker
-  - grammarly
-  # Better terminal
-  - iterm2
   # System monitoring
   - istat-menus
   # Better notes
@@ -69,6 +52,8 @@ all_brew_cask_packages:
   - spotify
   # Code editor
   - visual-studio-code
+  # WezTerm
+  - wezterm
   # Media player
   - vlc
   # Video conferencing
@@ -91,8 +76,6 @@ optional_brew_cask packages:
 # MAS
 apps:
   # Safari Extensions
-  - {id: "1402042596", name: "ADBlock"}
-  - {id: "1439967473", name: "Okta"}
   - {id: "1462114288", name: "Grammarly"}
 
   # Free apps
@@ -102,12 +85,11 @@ apps:
   - {id: "1437226581", name: "Horo timer"}
   - {id: "747648890", name: "Telegram"}
   - {id: "571213070", name: "DaVinci Resolve"}
+  - {id: "989642198", name: "MoneyCoach"}
 
   # Paid apps
   - {id: "904280696", name: "Things 3"}
   - {id: "1289583905", name: "Pixelmator Pro"}
-
-# 989642198   MoneyCoach            (9.1.5)
 
 
 # DOTFILES
