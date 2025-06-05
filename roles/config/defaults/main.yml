@@ -2,18 +2,8 @@ dotfiles_repo: ""
 dotfiles_repo_branch: main
 
 omz_plugins_dir: "$HOME/.oh-my-zsh/custom/plugins/"
-omz_plugins:
-  - { name: "zsh-autosuggestions", repo: "https://github.com/zsh-users/zsh-autosuggestions", branch: "master"}
-  - { name: "zsh-syntax-highlighting", repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git", branch: "master"}
+omz_plugins: []
 
 dotfiles_dest: $HOME/.dotfiles
 
-symlinks:
-  # ZSH
-  - { src: ".zsh/.zshrc", dest: "$HOME/.zshrc" }
-  - { src: ".zsh/themes/shurgentum.zsh-theme", dest: "$HOME/.oh-my-zsh/custom/themes/shurgentum.zsh-theme" }
-  # SSH
-  - { src: ".ssh/config", dest: "$HOME/.ssh/config" }
-  # GIT
-  # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Personal" }
-  # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Work" }
+symlinks: []

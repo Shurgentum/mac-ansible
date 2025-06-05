@@ -1,7 +1,43 @@
 --- 
-- import_tasks: omz.yml
-- import_tasks: git.yml
+# Global
+- name: Create .config directory in home
+  file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+    - "$HOME/.config"
+    - "$HOME/.config/wezterm"
+    
 
+# Install Oh My Zsh
+- name: Download Oh My Zsh install file
+  get_url:
+    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: /tmp/omz_install.sh
+    mode: "744"
+
+- name: Install Oh My Zsh
+  command:
+    cmd: sh /tmp/omz_install.sh
+    creates: "$HOME/.oh-my-zsh"
+  register: omz_install_result
+
+- name: Install omz plugins
+  git:
+    repo: "{{ item.repo }}"
+    version: "{{ item.branch }}"
+    dest: "{{ omz_plugins_dir }}{{ item.name }}"
+  loop: "{{ omz_plugins }}"
+
+- name: Ensure default .zshrc is absent
+  file:
+    path: "$HOME/.zshrc"
+    state: absent
+  when: omz_install_result is changed
+
+# - import_tasks: git.yml
+
+# Create symlinks for dotfiles
 - name: Clone dotfiles in home directory
   git:
     repo: "{{ dotfiles_repo }}"
