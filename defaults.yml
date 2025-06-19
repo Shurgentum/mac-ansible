@@ -42,6 +42,11 @@ all_brew_cask_packages:
   - docker
   # Cloud storage
   - dropbox
+  # Google products
+  - google-chrome
+  - google-drive
+  # AI grammar checker
+  - grammarly
   # System monitoring
   - istat-menus
   # Better notes
@@ -60,6 +65,8 @@ all_brew_cask_packages:
   - wezterm
   # Media player
   - vlc
+  # Better terminal
+  - wezterm
   # Video conferencing
   - zoom
 
