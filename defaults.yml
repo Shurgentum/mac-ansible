@@ -1,6 +1,8 @@
 ---
 # HomeBrew
 all_brew_packages:
+  # ArgoCD CLI
+  - argocd
   # GitHub CLI
   - gh
   # GNU PGP
