@@ -61,6 +61,8 @@ all_brew_cask_packages:
   - slack
   # Music
   - spotify
+  # Telegram messenger
+  - telegram
   # Code editor
   - visual-studio-code
   # WezTerm
@@ -96,7 +98,6 @@ apps:
   - {id: "409203825", name: "Apple Numbers"}
   - {id: "409183694", name: "Apple Keynote"}
   - {id: "1437226581", name: "Horo timer"}
-  - {id: "747648890", name: "Telegram"}
   - {id: "571213070", name: "DaVinci Resolve"}
   - {id: "989642198", name: "MoneyCoach"}
 
