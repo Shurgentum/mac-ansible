@@ -48,7 +48,7 @@ all_brew_cask_packages:
   - google-chrome
   - google-drive
   # AI grammar checker
-  - grammarly
+  - grammarly-desktop
   # System monitoring
   - istat-menus
   # Better notes
