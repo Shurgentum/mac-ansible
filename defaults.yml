@@ -16,6 +16,8 @@ all_brew_packages:
   - jq
   # Kubectl
   - kubernetes-cli
+  # Local Kubernetes cluster
+  - minikube
   # Node Version Manager
   - nvm
   # HashiCorp Terraform Version Manager
