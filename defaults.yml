@@ -16,6 +16,7 @@ all_brew_packages:
   - jq
   # Kubectl
   - kubernetes-cli
+  - kubectx
   # Local Kubernetes cluster
   - minikube
   # Node Version Manager
