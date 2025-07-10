@@ -39,8 +39,6 @@ all_brew_cask_packages:
   - 1password-cli
   # Better display control
   - betterdisplay
-  # Mac housekeeping tool
-  # - cleanmymac
   # Cloudflare 1.1.1.1 and WARP
   - cloudflare-warp
   # Docker
