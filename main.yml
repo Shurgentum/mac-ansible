@@ -1,11 +1,28 @@
 ---
 - name: Confiugre
-  hosts: local
+  hosts: localhost
 
   vars_files:
     - ./defaults.yml
-  
-  roles:
-    - homebrew
-    - mas
-    - config
+    - ./vars/static.yml
+
+  handlers:
+    - name: Remove Oh My Zsh install file
+      ansible.builtin.import_tasks:
+        file: handlers/general.yml
+  tasks:
+    - name: Install Oh My Zsh
+      ansible.builtin.import_tasks:
+        file: tasks/omz.yml
+
+    - name: Global configuration
+      ansible.builtin.import_tasks:
+        file: tasks/global.yml
+
+    - name: Homebrew
+      ansible.builtin.import_tasks:
+        file: tasks/brew.yml
+
+    - name: Mac App Store
+      ansible.builtin.import_tasks:
+        file: tasks/mas.yml

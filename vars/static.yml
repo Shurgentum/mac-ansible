@@ -14,3 +14,5 @@ macbook_model_identifiers:
   - "MacBookPro15,2"
   # MacBook Pro (15-inch, 2018)
   - "MacBookPro15,1"
+  # Macbook Air M4 (15-inch, 2025)
+  - "Mac16,13"

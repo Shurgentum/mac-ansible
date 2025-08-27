@@ -1,9 +1,0 @@
-dotfiles_repo: ""
-dotfiles_repo_branch: main
-
-omz_plugins_dir: "$HOME/.oh-my-zsh/custom/plugins/"
-omz_plugins: []
-
-dotfiles_dest: $HOME/.dotfiles
-
-symlinks: []
