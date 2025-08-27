@@ -13,6 +13,7 @@ dotfiles_dest: $HOME/.dotfiles
 # Symlinks to create
 symlinks:
   # ZSH
+  - { src: ".osx.sh", dest: "$HOME/.osx.sh" }
   - { src: ".zsh/.zshrc", dest: "$HOME/.zshrc" }
   - { src: ".zsh/themes/shurgentum.zsh-theme", dest: "$HOME/.oh-my-zsh/custom/themes/shurgentum.zsh-theme" }
   # SSH
