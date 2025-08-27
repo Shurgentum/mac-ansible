@@ -1,0 +1,30 @@
+- name: Install MAS with brew
+  community.general.homebrew:
+    name: mas
+    state: present
+
+- name: List installed apps
+  ansible.builtin.command:
+    cmd: mas list
+  register: mas_list
+  check_mode: false
+  changed_when: false
+
+- name: Ensure listed apps are installed
+  ansible.builtin.command:
+    cmd: mas install "{{ item.id | default(item) }}"
+  with_items: "{{ install_apps }}"
+  when: (item.id | default(item) | string) not in mas_list.stdout
+  # Just to suppress warning. This check really does nothing
+  register: mas_install_result
+  changed_when: mas_install_result.rc == 0
+
+- name: Ensure listed apps are uninstalled
+  ansible.builtin.command:
+    cmd: mas uninstall "{{ item.id | default(item) }}"
+  become: true
+  with_items: "{{ uninstall_apps }}"
+  when: (item.id | default(item) | string) in mas_list.stdout
+  # Just to suppress warning. This check really does nothing
+  register: mas_uninstall_result
+  changed_when: mas_uninstall_result.rc == 0

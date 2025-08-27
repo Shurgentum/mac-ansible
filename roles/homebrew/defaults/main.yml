@@ -1,7 +1,0 @@
-# Packages to install on any machine
-all_brew_packages: []
-all_brew_cask_packages: []
-
-# MacBook-specific packages
-macbook_brew_packages: []
-macbook_brew_cask_packages: []

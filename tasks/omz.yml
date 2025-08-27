@@ -1,0 +1,20 @@
+# Install Oh My Zsh
+- name: Download Oh My Zsh install file
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: /tmp/omz_install.sh
+    mode: "744"
+
+- name: Install Oh My Zsh
+  ansible.builtin.command:
+    cmd: sh /tmp/omz_install.sh
+    creates: "$HOME/.oh-my-zsh"
+  register: omz_install_result
+  notify: Remove .zshrc if it exists
+
+- name: Install omz plugins
+  ansible.builtin.git:
+    repo: "{{ item.repo }}"
+    version: "{{ item.branch }}"
+    dest: "{{ omz_plugins_dir }}{{ item.name }}"
+  loop: "{{ omz_plugins }}"

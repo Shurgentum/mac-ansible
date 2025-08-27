@@ -1,36 +1,63 @@
 ---
+# Oh My Zsh
+omz_plugins_dir: "$HOME/.oh-my-zsh/custom/plugins/"
+omz_plugins:
+  - { name: "zsh-autosuggestions", repo: "https://github.com/zsh-users/zsh-autosuggestions", branch: "master"}
+  - { name: "zsh-syntax-highlighting", repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git", branch: "master"}
+
+# dotfiles
+dotfiles_repo: "https://github.com/Shurgentum/dotfiles.git"
+dotfiles_repo_branch: main
+dotfiles_dest: $HOME/.dotfiles
+
+# Symlinks to create
+symlinks:
+  # ZSH
+  - { src: ".zsh/.zshrc", dest: "$HOME/.zshrc" }
+  - { src: ".zsh/themes/shurgentum.zsh-theme", dest: "$HOME/.oh-my-zsh/custom/themes/shurgentum.zsh-theme" }
+  # SSH
+  - { src: ".ssh/config", dest: "$HOME/.ssh/config" }
+  # WezTerm
+  - { src: "wezterm/wezterm.lua", dest: "$HOME/.config/wezterm/wezterm.lua" }
+  # GIT
+  # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Personal" }
+  # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Work" }
+
+
 # HomeBrew
 all_brew_packages:
-  # ArgoCD CLI
+  # Basic dependencies and libraries
+  - openssl
+  - readline
+  - sqlite3
+  - xz
+  - zlib
+  - tcl-tk@8
+  - libb2
+  - zstd
+
+  # Utilities
   - argocd
-  # GitHub CLI
   - gh
-  # GNU PGP
-  - gnupg
-  # Golang
-  - go
-  - gopls
-  # Helm
-  - helm
-  # JSON CLI Tool
   - jq
-  # Kubectl
+  - watch
+  - wget
+
+  # Kubernetes tools
   - kubernetes-cli
   - kubectx
-  # Local Kubernetes cluster
+  - helm
   - minikube
-  # Node Version Manager
+
+  # Programming tools
   - nvm
-  # HashiCorp Terraform Version Manager
-  - warrensbox/tap/tfswitch
-  # Tool for downloading files from the web
-  - wget
-  # Python Version Manager
+  - go
+  - gopls
   - pyenv
-  # Terragrunt terraform wrapper
+
+  # IaaC tools
+  - warrensbox/tap/tfswitch
   - terragrunt
-  # Periodical command execution
-  - watch
 
 
 all_brew_cask_packages:
@@ -43,13 +70,9 @@ all_brew_cask_packages:
   - cloudflare-warp
   # Docker
   - docker
-  # Cloud storage
-  - dropbox
   # Google products
-  - google-chrome
+  # - google-chrome
   - google-drive
-  # AI grammar checker
-  - grammarly-desktop
   # System monitoring
   - istat-menus
   # Better notes
@@ -66,8 +89,6 @@ all_brew_cask_packages:
   - telegram
   # Code editor
   - visual-studio-code
-  # WezTerm
-  - wezterm
   # Media player
   - vlc
   # Better terminal
@@ -80,17 +101,17 @@ macbook_brew_cask_packages:
   # Battery management
   - aldente
 
-optional_brew_cask packages:
-  # Menubar organization
-  - bartender
-  # MongoDB GUI
-  - mongodb-compass
-  # Trackpad/Mouse scrollwheel reverse tool
-  - unnaturalscrollwheels
+optional_brew_cask packages: []
+  # # Menubar organization
+  # - bartender
+  # # MongoDB GUI
+  # - mongodb-compass
+  # # Trackpad/Mouse scrollwheel reverse tool
+  # - unnaturalscrollwheels
 
 
 # MAS
-apps:
+install_apps:
   # Safari Extensions
   - {id: "1462114288", name: "Grammarly"}
 
@@ -100,33 +121,11 @@ apps:
   - {id: "409183694", name: "Apple Keynote"}
   - {id: "1437226581", name: "Horo timer"}
   - {id: "571213070", name: "DaVinci Resolve"}
-  - {id: "989642198", name: "MoneyCoach"}
 
   # Paid apps
   - {id: "904280696", name: "Things 3"}
   - {id: "1289583905", name: "Pixelmator Pro"}
 
-
-# DOTFILES
-
-dotfiles_repo: "https://github.com/Shurgentum/dotfiles.git"
-dotfiles_repo_branch: main
-
-omz_plugins_dir: "$HOME/.oh-my-zsh/custom/plugins/"
-omz_plugins:
-  - { name: "zsh-autosuggestions", repo: "https://github.com/zsh-users/zsh-autosuggestions", branch: "master"}
-  - { name: "zsh-syntax-highlighting", repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git", branch: "master"}
-
-dotfiles_dest: $HOME/.dotfiles
-
-symlinks:
-  # ZSH
-  - { src: ".zsh/.zshrc", dest: "$HOME/.zshrc" }
-  - { src: ".zsh/themes/shurgentum.zsh-theme", dest: "$HOME/.oh-my-zsh/custom/themes/shurgentum.zsh-theme" }
-  # SSH
-  - { src: ".ssh/config", dest: "$HOME/.ssh/config" }
-  # WezTerm
-  - { src: "wezterm/wezterm.lua", dest: "$HOME/.config/wezterm/wezterm.lua" }
-  # GIT
-  # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Personal" }
-  # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Work" }
+uninstall_apps:
+  - {id: "682658836", name: "GarageBand"}
+  - {id: "408981434", name: "iMovie"}

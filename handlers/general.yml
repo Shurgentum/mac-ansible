@@ -1,0 +1,4 @@
+- name: Remove .zshrc if it exists
+  ansible.builtin.file:
+    path: "$HOME/.zshrc"
+    state: absent
