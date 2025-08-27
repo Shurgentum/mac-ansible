@@ -32,3 +32,8 @@
     dest: "{{ item.dest }}"
     state: link
   loop: "{{ symlinks }}"
+
+- name: Configure osx via script
+  ansible.builtin.shell:
+    cmd: source $HOME/.osx.sh
+    creates: "$HOME/.osx.sh.done"
