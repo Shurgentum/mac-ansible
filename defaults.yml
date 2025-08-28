@@ -38,6 +38,7 @@ all_brew_packages:
   - zstd
 
   # Utilities
+  - awscli
   - argocd
   - gh
   - jq
