@@ -22,7 +22,7 @@
     state: present
     sudo_password: "{{ ansible_become_password | default(omit) }}"
   loop: "{{ macbook_brew_cask_packages }}"
-  when: ansible_model in macbook_model_identifiers
+  when: ansible_facts.model in macbook_model_identifiers
 
 - name: Ensure all packages are upgraded
   community.general.homebrew:
