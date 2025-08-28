@@ -1,4 +1,4 @@
-# Install Oh My Zsh
+---
 - name: Download Oh My Zsh install file
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
