@@ -114,9 +114,6 @@ optional_brew_cask packages: []
 
 # MAS
 install_apps:
-  # Safari Extensions
-  - {id: "1462114288", name: "Grammarly"}
-
   # Free apps
   - {id: "409201541", name: "Apple Pages"}
   - {id: "409203825", name: "Apple Numbers"}
@@ -148,8 +145,7 @@ dock_remove:
   - Pages
   - Numbers
   - Keynote
-  - App Store
-  - 'System Settings'
+  - 'App Store'
   - 'iPhone Mirroring'
 
 dock_add:
@@ -184,3 +180,7 @@ dock_add:
   - name: "Visual Studio Code"
     path: "/Applications/Visual\ Studio\ Code.app"
     pos: 11
+
+  - name: "System Settings"
+    path: "/System/Applications/System\ Settings.app"
+    pos: 12
