@@ -1,0 +1,17 @@
+---
+- name: Get the destination stats - {{ item.src }}
+  ansible.builtin.stat:
+    path: "{{ item.dest }}"
+  register: file_status
+
+- name: Check stats and free space if needed - {{ item.src }}
+  ansible.builtin.file:
+    path: "{{ item.dest }}"
+    state: absent
+  when: file_status.stat.exists and not file_status.stat.islnk
+
+- name: Create symlinks - {{ item.src }}
+  ansible.builtin.file:
+    src: "{{ dotfiles_dest }}/{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link

@@ -130,3 +130,56 @@ install_apps:
 uninstall_apps:
   - {id: "682658836", name: "GarageBand"}
   - {id: "408981434", name: "iMovie"}
+
+
+dock_remove:
+  - Launchpad
+  - Messages
+  - Mail
+  - Maps
+  - Photos
+  - FaceTime
+  - Contacts
+  - Reminders
+  - Freeform
+  - TV
+  - Music
+  - Pages
+  - Numbers
+  - Keynote
+  - App Store
+  - 'System Settings'
+  - 'iPhone Mirroring'
+
+dock_add:
+  - name: "Spark Desktop"
+    path: "/Applications/Spark\ Desktop.app"
+    pos: 2
+
+  - name: "Spotify"
+    path: /Applications/Spotify.app
+    pos: 5
+
+  - name: "Slack"
+    path: "/Applications/Slack.app"
+    pos: 6
+
+  - name: "Telegram"
+    path: "/Applications/Telegram.app"
+    pos: 7
+
+  - name: "Pixelmator Pro"
+    path: "/Applications/Pixelmator\ Pro.app"
+    pos: 8
+
+  - name: "DaVinci Resolve"
+    path: "/Applications/DaVinci\ Resolve.app"
+    pos: 9
+
+  - name: "WezTerm"
+    path: "/Applications/WezTerm.app"
+    pos: 10
+
+  - name: "Visual Studio Code"
+    path: "/Applications/Visual\ Studio\ Code.app"
+    pos: 11

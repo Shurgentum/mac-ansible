@@ -1,3 +1,4 @@
+---
 # Create necessary directories
 - name: Create .config directory in home
   ansible.builtin.file:
@@ -15,23 +16,12 @@
     version: "{{ dotfiles_repo_branch }}"
     dest: "{{ dotfiles_dest }}"
 
-- name: Get stats of ssh config
-  ansible.builtin.stat:
-    path: "$HOME/.ssh/config"
-  register: file_status
-
-- name: Remove ssh config if it is not a symlink
-  when: file_status.stat.exists and not file_status.stat.islnk
-  ansible.builtin.file:
-    path: "$HOME/.ssh/config"
-    state: absent
-
-- name: Create symlinks
-  ansible.builtin.file:
-    src: "{{ dotfiles_dest }}/{{ item.src }}"
-    dest: "{{ item.dest }}"
-    state: link
+- name: Create all symlinks
+  ansible.builtin.include_tasks: global-symlinks.yml
   loop: "{{ symlinks }}"
+  loop_control:
+    extended: true
+    extended_allitems: false
 
 - name: Configure osx via script
   ansible.builtin.shell:

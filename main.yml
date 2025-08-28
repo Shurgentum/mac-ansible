@@ -26,3 +26,7 @@
     - name: Mac App Store
       ansible.builtin.import_tasks:
         file: tasks/mas.yml
+
+    - name: Configure dock
+      ansible.builtin.import_tasks:
+        file: tasks/dock.yml
