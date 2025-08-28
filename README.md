@@ -1,4 +1,5 @@
 # Mac Development Ansible Playbook
+>This playbook is a very simplified version of [mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook) developed by [@geerlingguy](https://github.com/geerlingguy) adapted to my personal needs. Special credits to the original author.
 
 <img src="./.github/assets/Mac-Dev-Playbook-Logo.png" width="250" height="156" alt="Mac Dev Playbook Logo" />
 
