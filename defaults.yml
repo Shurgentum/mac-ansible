@@ -6,7 +6,7 @@ omz_plugins:
   - { name: "zsh-syntax-highlighting", repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git", branch: "master"}
 
 # dotfiles
-dotfiles_repo: "https://github.com/Shurgentum/dotfiles.git"
+dotfiles_repo: "git@github.com:Shurgentum/dotfiles.git"
 dotfiles_repo_branch: main
 dotfiles_dest: $HOME/.dotfiles
 
