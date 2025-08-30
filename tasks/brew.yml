@@ -3,6 +3,12 @@
   community.general.homebrew:
     update_homebrew: true
 
+- name: Ensure all taps are tapped
+  community.general.homebrew_tap:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ homebrew_tap_repos }}"
+
 - name: Ensure all global homebrew packages are installed
   community.general.homebrew:
     name: "{{ item }}"

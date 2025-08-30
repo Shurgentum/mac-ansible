@@ -24,7 +24,8 @@ symlinks:
   # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Personal" }
   # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Work" }
 
-
+homebrew_tap_repos:
+  - warrensbox/tap
 # HomeBrew
 all_brew_packages:
   # Basic dependencies and libraries
@@ -58,7 +59,7 @@ all_brew_packages:
   - pyenv
 
   # IaaC tools
-  - warrensbox/tap/tfswitch
+  - tfswitch
   - terragrunt
 
 
