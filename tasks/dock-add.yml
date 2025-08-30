@@ -14,8 +14,7 @@
 
 - name: Ensure Dock item exists - {{ item.name | default(item) }}
   ansible.builtin.command: |
-    dockutil --add '{{ item.path }}' --label '{{ item.name }}'
-    {% if not ansible_loop.last %}--no-restart{% endif %}
+    dockutil --add '{{ item.path }}' --label '{{ item.name }} --no-restart'
   register: dockeritem_add
   when: dockitem_exists.rc > 0 or
         dockitem_exists.rc == 0 and current_section == 'recent-apps'

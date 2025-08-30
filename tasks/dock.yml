@@ -24,3 +24,9 @@
   loop_control:
     extended: true
     extended_allitems: false
+
+- name: Reset Dock
+  ansible.builtin.command:
+    cmd: killall Dock
+  when: ansible_loop.last
+  changed_when: false
