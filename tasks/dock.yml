@@ -28,5 +28,4 @@
 - name: Reset Dock
   ansible.builtin.command:
     cmd: killall Dock
-  when: ansible_loop.last
   changed_when: false
