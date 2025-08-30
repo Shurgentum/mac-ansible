@@ -168,7 +168,7 @@ dock_add:
     pos: 4
 
   - name: "Things"
-    path: "/Applications/Things.app"
+    path: "/Applications/Things3.app"
     pos: 5
 
   - name: "Spotify"

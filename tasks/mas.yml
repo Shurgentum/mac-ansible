@@ -10,6 +10,8 @@
   register: mas_list
   check_mode: false
   changed_when: false
+  # Handle both no apps installed (rc=1) and normal operation (rc=0)
+  failed_when: mas_list.rc != 0 and mas_list.rc != 1
 
 - name: Ensure listed apps are installed
   ansible.builtin.command:
