@@ -149,38 +149,55 @@ dock_remove:
   - 'iPhone Mirroring'
 
 dock_add:
+
+  - name: "Safari"
+    path: "/System/Cryptexes/App/System/Applications/Safari.app"
+    pos: 1
+
   - name: "Spark Desktop"
     path: "/Applications/Spark\ Desktop.app"
     pos: 2
 
+  - name: "Calendar"
+    path: "/System/Applications/Calendar.app"
+    pos: 3
+
+  - name: "Notes"
+    path: "/System/Applications/Notes.app"
+    pos: 4
+
+  - name: "Things"
+    path: "/Applications/Things.app"
+    pos: 5
+
   - name: "Spotify"
     path: /Applications/Spotify.app
-    pos: 5
+    pos: 6
 
   - name: "Slack"
     path: "/Applications/Slack.app"
-    pos: 6
+    pos: 7
 
   - name: "Telegram"
     path: "/Applications/Telegram.app"
-    pos: 7
+    pos: 8
 
   - name: "Pixelmator Pro"
     path: "/Applications/Pixelmator\ Pro.app"
-    pos: 8
+    pos: 9
 
   - name: "DaVinci Resolve"
     path: "/Applications/DaVinci\ Resolve.app"
-    pos: 9
+    pos: 10
 
   - name: "WezTerm"
     path: "/Applications/WezTerm.app"
-    pos: 10
+    pos: 11
 
   - name: "Visual Studio Code"
     path: "/Applications/Visual\ Studio\ Code.app"
-    pos: 11
+    pos: 12
 
   - name: "System Settings"
     path: "/System/Applications/System\ Settings.app"
-    pos: 12
+    pos: 13
