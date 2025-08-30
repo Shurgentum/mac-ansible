@@ -18,7 +18,6 @@
   failed_when: >
     "Remove failed for" in dockitem_exists.stdout
 
-
 - name: Pause for 7 seconds between dock changes.
   ansible.builtin.pause:
     seconds: 7
