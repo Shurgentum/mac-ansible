@@ -24,9 +24,10 @@ symlinks:
   # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Personal" }
   # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Work" }
 
+# HomeBrew
 homebrew_tap_repos:
   - warrensbox/tap
-# HomeBrew
+
 all_brew_packages:
   # Basic dependencies and libraries
   - openssl
@@ -64,40 +65,36 @@ all_brew_packages:
 
 
 all_brew_cask_packages:
-  # Password manager
+  # System utilities
+  - betterdisplay
+  - istat-menus
+  - rectangle
+  - notion
+
+  # Productivity
+
+  # Media
+  - spotify
+  - vlc
+
+  # Communication
+  - readdle-spark
+  - slack
+  - telegram
+  - zoom
+
+  # Development tools
+  - docker
+  - visual-studio-code
+  - wezterm
+  - zed
+
+  # Other
   - 1password
   - 1password-cli
-  # Better display control
-  - betterdisplay
-  # Cloudflare 1.1.1.1 and WARP
   - cloudflare-warp
-  # Docker
-  - docker
-  # Google products
-  # - google-chrome
   - google-drive
-  # System monitoring
-  - istat-menus
-  # Better notes
-  - notion
-  # Mail client
-  - readdle-spark
-  # Desktop organization tool
-  - rectangle
-  # Slack client
-  - slack
-  # Music
-  - spotify
-  # Telegram messenger
-  - telegram
-  # Code editor
-  - visual-studio-code
-  # Media player
-  - vlc
-  # Better terminal
-  - wezterm
-  # Video conferencing
-  - zoom
+
 
 macbook_brew_packages: []
 macbook_brew_cask_packages:
@@ -199,6 +196,14 @@ dock_add:
     path: "/Applications/Visual\ Studio\ Code.app"
     pos: 12
 
+  - name: "Zed"
+    path: "/Applications/Zed.app"
+    pos: 13
+
   - name: "System Settings"
     path: "/System/Applications/System\ Settings.app"
-    pos: 13
+    pos: 14
+
+  - name: "1Password"
+    path: "/Applications/1Password.app"
+    pos: 15
