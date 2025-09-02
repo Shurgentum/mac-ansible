@@ -97,6 +97,7 @@ all_brew_cask_packages:
 
   # Development tools
   - docker
+  - gitbutler
   - visual-studio-code
   - wezterm
   - zed
@@ -107,8 +108,6 @@ all_brew_cask_packages:
   - cloudflare-warp
   - google-drive
 
-
-macbook_brew_packages: []
 macbook_brew_cask_packages:
   # Battery management
   - aldente
