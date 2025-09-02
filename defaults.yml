@@ -2,8 +2,16 @@
 # Oh My Zsh
 omz_plugins_dir: "$HOME/.oh-my-zsh/custom/plugins/"
 omz_plugins:
-  - { name: "zsh-autosuggestions", repo: "https://github.com/zsh-users/zsh-autosuggestions", branch: "master"}
-  - { name: "zsh-syntax-highlighting", repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git", branch: "master"}
+  - {
+      name: "zsh-autosuggestions",
+      repo: "https://github.com/zsh-users/zsh-autosuggestions",
+      branch: "master",
+    }
+  - {
+      name: "zsh-syntax-highlighting",
+      repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git",
+      branch: "master",
+    }
 
 # dotfiles
 dotfiles_repo: "git@github.com:Shurgentum/dotfiles.git"
@@ -15,11 +23,16 @@ symlinks:
   # ZSH
   - { src: ".osx.sh", dest: "$HOME/.osx.sh" }
   - { src: ".zsh/.zshrc", dest: "$HOME/.zshrc" }
-  - { src: ".zsh/themes/shurgentum.zsh-theme", dest: "$HOME/.oh-my-zsh/custom/themes/shurgentum.zsh-theme" }
+  - {
+      src: ".zsh/themes/shurgentum.zsh-theme",
+      dest: "$HOME/.oh-my-zsh/custom/themes/shurgentum.zsh-theme",
+    }
   # SSH
   - { src: ".ssh/config", dest: "$HOME/.ssh/config" }
   # WezTerm
   - { src: "wezterm/wezterm.lua", dest: "$HOME/.config/wezterm/wezterm.lua" }
+  # Zed editor
+  - { src: "zed/settings.json", dest: "$HOME/.config/zed/settings.json" }
   # GIT
   # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Personal" }
   # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Work" }
@@ -61,7 +74,6 @@ all_brew_packages:
   # IaaC tools
   - tfswitch
   - terragrunt
-
 
 all_brew_cask_packages:
   # Password manager
@@ -112,24 +124,22 @@ optional_brew_cask packages: []
   # # Trackpad/Mouse scrollwheel reverse tool
   # - unnaturalscrollwheels
 
-
 # MAS
 install_apps:
   # Free apps
-  - {id: "409201541", name: "Apple Pages"}
-  - {id: "409203825", name: "Apple Numbers"}
-  - {id: "409183694", name: "Apple Keynote"}
-  - {id: "1437226581", name: "Horo timer"}
-  - {id: "571213070", name: "DaVinci Resolve"}
+  - { id: "409201541", name: "Apple Pages" }
+  - { id: "409203825", name: "Apple Numbers" }
+  - { id: "409183694", name: "Apple Keynote" }
+  - { id: "1437226581", name: "Horo timer" }
+  - { id: "571213070", name: "DaVinci Resolve" }
 
   # Paid apps
-  - {id: "904280696", name: "Things 3"}
-  - {id: "1289583905", name: "Pixelmator Pro"}
+  - { id: "904280696", name: "Things 3" }
+  - { id: "1289583905", name: "Pixelmator Pro" }
 
 uninstall_apps:
-  - {id: "682658836", name: "GarageBand"}
-  - {id: "408981434", name: "iMovie"}
-
+  - { id: "682658836", name: "GarageBand" }
+  - { id: "408981434", name: "iMovie" }
 
 dock_remove:
   - Launchpad
@@ -146,11 +156,10 @@ dock_remove:
   - Pages
   - Numbers
   - Keynote
-  - 'App Store'
-  - 'iPhone Mirroring'
+  - "App Store"
+  - "iPhone Mirroring"
 
 dock_add:
-
   - name: "Safari"
     path: "/System/Cryptexes/App/System/Applications/Safari.app"
     pos: 1
