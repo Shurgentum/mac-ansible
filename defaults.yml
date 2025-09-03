@@ -75,7 +75,6 @@ all_brew_packages:
   # IaaC tools
   - tfswitch
   - terragrunt
-
 all_brew_cask_packages:
   # System utilities
   - betterdisplay
@@ -208,10 +207,14 @@ dock_add:
     path: "/Applications/Zed.app"
     pos: 13
 
+  - name: "GitButler"
+    path: "/Applications/GitButler.app"
+    pos: 14
+
   - name: "System Settings"
     path: "/System/Applications/System\ Settings.app"
-    pos: 14
+    pos: 15
 
   - name: "1Password"
     path: "/Applications/1Password.app"
-    pos: 15
+    pos: 16
