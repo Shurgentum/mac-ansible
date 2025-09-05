@@ -32,6 +32,7 @@ symlinks:
   # WezTerm
   - { src: "wezterm/wezterm.lua", dest: "$HOME/.config/wezterm/wezterm.lua" }
   # Zed editor
+  - { src: "zed/keymap.json", dest: "$HOME/.config/zed/keymap.json" }
   - { src: "zed/settings.json", dest: "$HOME/.config/zed/settings.json" }
   # GIT
   # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Personal" }
@@ -122,6 +123,7 @@ optional_brew_cask packages: []
 # MAS
 install_apps:
   # Free apps
+  - { id: "1440147259", name: "AdGuard for Safari" }
   - { id: "409201541", name: "Apple Pages" }
   - { id: "409203825", name: "Apple Numbers" }
   - { id: "409183694", name: "Apple Keynote" }
