@@ -122,6 +122,7 @@ optional_brew_cask packages: []
 # MAS
 install_apps:
   # Free apps
+  - { id: "1440147259", name: "AdGuard for Safari" }
   - { id: "409201541", name: "Apple Pages" }
   - { id: "409203825", name: "Apple Numbers" }
   - { id: "409183694", name: "Apple Keynote" }
