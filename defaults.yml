@@ -32,6 +32,7 @@ symlinks:
   # WezTerm
   - { src: "wezterm/wezterm.lua", dest: "$HOME/.config/wezterm/wezterm.lua" }
   # Zed editor
+  - { src: "zed/keymap.json", dest: "$HOME/.config/zed/keymap.json" }
   - { src: "zed/settings.json", dest: "$HOME/.config/zed/settings.json" }
   # GIT
   # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Personal" }
