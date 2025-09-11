@@ -1,0 +1,40 @@
+[user]
+	name = Shurgentum
+	email = shurgentum@gmail.com
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDBVbamVGlgJOdqrF8IT52/I98BGhebINiEzFoHhhOsQt0FZwqNl93mCyA8jUzsIJGFuv2JGLzqb5RmngcehAgBlD/RhqTfhLNN/1/AsqAvmpYCvTsoiCC8MNKY1bqH85WX4ou2gDkzlORpZeVTaiZ2YUI+LY4pXs9ToiK7Uz5rWViN7Ldsq4QeUgj9XLLsgMO9PBiuinG0VObDivNJmBq9ST+3PdfE1qZM/Q28vB6u0VclgbZCLkl9mpItrRJ2fe/pT2yZBhrAYKJghCblS1F4ZPC3vIISSfR4ihPIKSPQP/+dhugDBPbax0Tcnl/2JpQIs2K2JNpWhuo7TlZ9pWB6lYDd3eGfUb3KumNJLx3bdlWEa9OwJGXqbLx0vyxT5OgUIUfbljZTszc7HYz7Mi0JXzGNoXbfl7e7CS8U9Ij34JVzCeY5GWeJzvNuGrYT//wtxO99na7gHPE47ajI33Wq0XiIMJx38gswtnyF1C/EUqNwIuyYZDlgUZVAT6Y96PMM1tdmvLdN0JbGuWz3E4JPKQprRgDxIRLxpiA6FwE70UI19PJYRSJZc88X7zgV3CzxZL/+NtwweoOlYXY37s4X8mOgthq1+3G5pXqjGYaovT/Vlxh+EW26duv3eipFPXr0T5TdS8STEQ0ESsu3lzhO7KymXbrW8dnmf3kUHV9WBw==
+
+[init]
+	defaultbranch = "main"
+
+[core]
+	excludesfile = ~/.global.gitignore
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+	gpgsign = true
+
+[alias]
+	# List available aliases
+	aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
+	# Command shortcuts
+	ci = commit
+	co = checkout
+	st = status
+	# Display tree-like log, because default log is a pain…
+	lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+	# Useful when you have to update your last commit
+	# Ensure that force-pushing won't lose someone else's work (only mine).
+	push-with-lease = push --force-with-lease
+	# Edit last commit message
+	reword = commit --amend
+	# with staged files without editing the commit message.
+	oops = commit --amend --no-edit
+	# Undo last commit but keep changed files in stage
+	uncommit = reset --soft HEAD~1
+	# Remove file(s) from Git but not from disk
+	untrack = rm --cache --
