@@ -10,11 +10,9 @@
     - "$HOME/.config/wezterm"
     - "$HOME/.config/zed"
 
-# Create symlinks for dotfiles
-- name: Clone dotfiles in home directory
-  ansible.builtin.git:
-    repo: "{{ dotfiles_repo }}"
-    version: "{{ dotfiles_repo_branch }}"
+- name: Copy dotfiles in home directory
+  ansible.builtin.copy:
+    src: "{{ playbook_dir }}/.dotfiles/"
     dest: "{{ dotfiles_dest }}"
 
 - name: Create all symlinks

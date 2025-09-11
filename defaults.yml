@@ -14,8 +14,6 @@ omz_plugins:
     }
 
 # dotfiles
-dotfiles_repo: "git@github.com:Shurgentum/dotfiles.git"
-dotfiles_repo_branch: main
 dotfiles_dest: $HOME/.dotfiles
 
 # Symlinks to create
@@ -76,6 +74,7 @@ all_brew_packages:
   # IaaC tools
   - tfswitch
   - terragrunt
+
 all_brew_cask_packages:
   # System utilities
   - betterdisplay
