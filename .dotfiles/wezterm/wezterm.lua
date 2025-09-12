@@ -10,6 +10,11 @@ local wezterm = require 'wezterm'
 
 local config = wezterm.config_builder()
 
+-- Basic configuration
+config.initial_cols = 105
+config.initial_rows = 30
+
+
 -- Style
 config.default_cursor_style = 'BlinkingUnderline'
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
@@ -17,7 +22,7 @@ config.font =
     wezterm.font('JetBrains Mono', { weight = 'Bold', italic = false })
 
 -- Window specific
-config.window_close_confirmation = 'AlwaysPrompt'
+config.window_close_confirmation = 'NeverPrompt'
 config.window_background_opacity = 0.85
 config.hide_tab_bar_if_only_one_tab = true
 
