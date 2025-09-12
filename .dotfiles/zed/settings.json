@@ -7,8 +7,16 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 
-// Extensions
+// Edit predictions
 {
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "edit_predictions": {
+    "mode": "eager"
+  },
+
+  // Extensions
   "auto_install_extensions": {
     "catppuccin": true,
     "catppuccin-icons": true,
