@@ -1,0 +1,59 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+
+// Extensions
+{
+  "auto_install_extensions": {
+    "catppuccin": true,
+    "catppuccin-icons": true,
+
+    "dockerfile": true,
+    "html": true,
+    "ini": true,
+    "lua": true,
+    "terraform": true,
+    "toml": true
+  },
+
+  // UI
+  "git_panel": {
+    "dock": "right"
+  },
+
+  // General font size
+  "ui_font_size": 16,
+  // Editor font size
+  "buffer_font_size": 15,
+  "buffer_line_height": "standard",
+  // Terminal settings
+  "terminal": {
+    "blinking": "on",
+    "cursor_shape": "bar",
+    "font_size": 14,
+    "line_height": { "custom": 1.45 }
+  },
+
+  "project_panel": {
+    "entry_spacing": "standard",
+    "indent_size": 15
+  },
+
+  "gutter": {
+    // 3 digits is actually enough to display 4
+    "min_line_number_digits": 3
+  },
+
+  // Themes
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Macchiato"
+  },
+  "icon_theme": "Catppuccin Latte"
+}
