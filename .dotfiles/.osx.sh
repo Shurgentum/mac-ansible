@@ -54,11 +54,13 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 # Set the Dock to not show recent applications
 defaults write com.apple.dock show-recents -bool false
 
+# Disable rearrangement of spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
 # Reset the Dock to apply changes
 killall Dock
 
-# Disable rearrangement of spaces based on most recent use
-defaults write com.apple.dock "mru-spaces" -bool false
+
 
 # Disable tiling by dragging windows to screen borders
 # Remove this, if Rectangle app is not used
@@ -109,4 +111,5 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Disable in-app rating requests from apps downloaded from the App Store.
 defaults write com.apple.appstore InAppReviewEnabled -int 0
 
-touch "$HOME/.osx.sh.done"
+# Write sha256 of this script to track if it has changed
+shasum -a 256 "$HOME/.osx.sh" | awk '{print $1}' > "$HOME/.osx.sh.done"

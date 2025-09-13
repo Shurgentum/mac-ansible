@@ -22,7 +22,14 @@
     extended: true
     extended_allitems: false
 
+- name: Stat .osx.sh.done
+  ansible.builtin.stat:
+    path: "$HOME/.osx.sh"
+    follow: yes
+    checksum_algorithm: sha256
+  register: osx_file
+
 - name: Configure osx via script
   ansible.builtin.shell:
     cmd: source $HOME/.osx.sh
-    creates: "$HOME/.osx.sh.done"
+  when: osx_file.stat.checksum != lookup('ansible.builtin.file', osx_file.stat.path + ".done", errors='ignore')
