@@ -2,18 +2,25 @@
 - name: Update homebrew
   community.general.homebrew:
     update_homebrew: true
+  tags:
+    - brew
+    - brew-cask
 
 - name: Ensure all taps are tapped
   community.general.homebrew_tap:
     name: "{{ item }}"
     state: present
   loop: "{{ homebrew_tap_repos }}"
+  tags:
+    - brew
 
 - name: Ensure all global homebrew packages are installed
   community.general.homebrew:
     name: "{{ item }}"
     state: present
   loop: "{{ all_brew_packages }}"
+  tags:
+    - brew
 
 - name: Ensure all global homebrew cask packages are installed
   community.general.homebrew_cask:
@@ -21,6 +28,8 @@
     state: present
     sudo_password: "{{ ansible_become_password | default(omit) }}"
   loop: "{{ all_brew_cask_packages }}"
+  tags:
+    - brew-cask
 
 - name: Ensure all global homebrew cask packages for macbooks are installed
   community.general.homebrew_cask:
@@ -29,8 +38,12 @@
     sudo_password: "{{ ansible_become_password | default(omit) }}"
   loop: "{{ macbook_brew_cask_packages }}"
   when: ansible_facts.model in macbook_model_identifiers
+  tags:
+    - brew-cask
 
 - name: Ensure all packages are upgraded
   community.general.homebrew:
     update_homebrew: true
     upgrade_all: true
+  tags:
+    - brew

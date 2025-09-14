@@ -66,10 +66,12 @@ all_brew_packages:
   - minikube
 
   # Programming tools
-  - nvm
   - go
   - gopls
+  - nvm
   - pyenv
+  - pyenv-virtualenv
+  - ruff
 
   # IaaC tools
   - tfswitch
@@ -80,16 +82,17 @@ all_brew_cask_packages:
   - betterdisplay
   - istat-menus
   - rectangle
-  - notion
+  # - unnaturalscrollwheels
 
   # Productivity
+  - notion
+  - readdle-spark
 
   # Media
   - spotify
   - vlc
 
   # Communication
-  - readdle-spark
   - slack
   - telegram
   - zoom
@@ -110,14 +113,7 @@ all_brew_cask_packages:
 macbook_brew_cask_packages:
   # Battery management
   - aldente
-
-optional_brew_cask packages: []
-  # # Menubar organization
   # - bartender
-  # # MongoDB GUI
-  # - mongodb-compass
-  # # Trackpad/Mouse scrollwheel reverse tool
-  # - unnaturalscrollwheels
 
 # MAS
 install_apps:

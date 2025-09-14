@@ -10,14 +10,19 @@
     - name: Remove Oh My Zsh install file
       ansible.builtin.import_tasks:
         file: handlers/general.yml
+
   tasks:
     - name: Install Oh My Zsh
       ansible.builtin.import_tasks:
         file: tasks/omz.yml
+      tags:
+        - omz
 
     - name: Global configuration
       ansible.builtin.import_tasks:
         file: tasks/global.yml
+      tags:
+        - global
 
     - name: Homebrew
       ansible.builtin.import_tasks:
@@ -26,7 +31,11 @@
     - name: Mac App Store
       ansible.builtin.import_tasks:
         file: tasks/mas.yml
+      tags:
+        - mas
 
     - name: Configure dock
       ansible.builtin.import_tasks:
         file: tasks/dock.yml
+      tags:
+        - dock
