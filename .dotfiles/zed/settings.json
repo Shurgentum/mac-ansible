@@ -1,20 +1,111 @@
 // Zed settings
 //
 // For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
+// documentation: https://zed.dev/docs/configuring-zedf
 //
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 
-// Edit predictions
 {
+  // ################################################################
+  // AI-related stuff
+  // ################################################################
+  "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-3.5-sonnet"
+    }
+  },
   "features": {
     "edit_prediction_provider": "copilot"
   },
   "edit_predictions": {
-    "mode": "eager"
+    "mode": "subtle"
   },
+
+  // ################################################################
+  // UI customization
+  // ################################################################
+
+  // Themes
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Macchiato"
+  },
+  "icon_theme": "Catppuccin Latte",
+
+  // General font size
+  "ui_font_size": 16,
+  // Editor font size
+  "buffer_font_size": 15,
+  "buffer_font_weight": 400,
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_line_height": "standard",
+  "gutter": {
+    // 3 digits is actually enough to display 4
+    "min_line_number_digits": 3
+  },
+  "minimap": {
+    "show": "auto",
+    "current_line_highlight": "all"
+  },
+
+  "scrollbar": {
+    "show": "auto"
+  },
+
+  // Terminal settings
+  "terminal": {
+    "blinking": "on",
+    "cursor_shape": "bar",
+    "font_family": "JetBrains Mono",
+    "font_size": 13,
+    "font_weight": 600,
+    "line_height": { "custom": 1.45 }
+  },
+
+  // Project panel
+  "project_panel": {
+    "entry_spacing": "standard",
+    "indent_size": 15
+  },
+
+  // Panels docking
+  "git_panel": {
+    "dock": "right"
+  },
+
+  // ################################################################
+  // Language-specific
+  // ################################################################
+  "extend_comment_on_newline": false,
+  "languages": {
+    "Python": {
+      "language_servers": ["pylsp", "ruff", "!pyright"],
+      "format_on_save": "on",
+      "code_actions_on_format": {
+        "source.organizeImports.ruff": true
+      },
+      "formatter": [{ "language_server": { "name": "ruff" } }]
+    }
+  },
+
+  "lsp": {
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "lineLength": 110,
+          "lint": { "extendSelect": ["I"] }
+        }
+      }
+    }
+  },
+
+  // ################################################################
+  // General
+  // ################################################################
 
   // Extensions
   "auto_install_extensions": {
@@ -26,42 +117,14 @@
     "ini": true,
     "lua": true,
     "terraform": true,
-    "toml": true
+    "toml": true,
+
+    "ruff": true
   },
 
-  // UI
-  "git_panel": {
-    "dock": "right"
-  },
-
-  // General font size
-  "ui_font_size": 16,
-  // Editor font size
-  "buffer_font_size": 15,
-  "buffer_line_height": "standard",
-  // Terminal settings
-  "terminal": {
-    "blinking": "on",
-    "cursor_shape": "bar",
-    "font_size": 14,
-    "line_height": { "custom": 1.45 }
-  },
-
-  "project_panel": {
-    "entry_spacing": "standard",
-    "indent_size": 15
-  },
-
-  "gutter": {
-    // 3 digits is actually enough to display 4
-    "min_line_number_digits": 3
-  },
-
-  // Themes
-  "theme": {
-    "mode": "system",
-    "light": "Catppuccin Latte",
-    "dark": "Catppuccin Macchiato"
-  },
-  "icon_theme": "Catppuccin Latte"
+  // Send only crash reports
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": false
+  }
 }
