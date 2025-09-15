@@ -13,16 +13,20 @@
       "alt-tab": "editor::AcceptEditPrediction"
     }
   },
-  // Bind `tab` back to its original behavior.
+
   {
     "context": "Editor",
     "bindings": {
-      "tab": "editor::Tab"
+      // Bind `tab` back to its original behavior.
+      "tab": "editor::Tab",
+      // Force show completions
+      "ctrl-\\": "editor::ShowCompletions"
     }
   },
   {
     "context": "Editor && showing_completions",
     "bindings": {
+      // Bind `tab` back to its original behavior.
       "tab": "editor::ComposeCompletion"
     }
   }

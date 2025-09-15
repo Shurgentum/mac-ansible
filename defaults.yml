@@ -14,7 +14,7 @@ omz_plugins:
     }
 
 # dotfiles
-dotfiles_dest: $HOME/.dotfiles
+dotfiles_dest: "$HOME/.dotfiles"
 
 # Symlinks to create
 symlinks:
@@ -108,6 +108,7 @@ all_brew_cask_packages:
   - 1password
   - 1password-cli
   - cloudflare-warp
+  - font-jetbrains-mono
   - google-drive
 
 macbook_brew_cask_packages:
@@ -173,7 +174,7 @@ dock_add:
     pos: 5
 
   - name: "Spotify"
-    path: /Applications/Spotify.app
+    path: "/Applications/Spotify.app"
     pos: 6
 
   - name: "Slack"
