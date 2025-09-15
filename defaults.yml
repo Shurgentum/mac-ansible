@@ -104,11 +104,15 @@ all_brew_cask_packages:
   - wezterm
   - zed
 
+  # Fonts
+  - font-jetbrains-mono
+  - font-roboto-flex
+  - font-work-sans
+
   # Other
   - 1password
   - 1password-cli
   - cloudflare-warp
-  - font-jetbrains-mono
   - google-drive
 
 macbook_brew_cask_packages:
