@@ -38,6 +38,8 @@
 
   // General font size
   "ui_font_size": 16,
+  "ui_font_weight": 400,
+  "ui_font_family": "Roboto Flex",
   // Editor font size
   "buffer_font_size": 15,
   "buffer_font_weight": 400,
