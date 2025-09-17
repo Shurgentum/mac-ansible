@@ -3,7 +3,7 @@
 ## Basic Prompt Variables
 
 ### Primary Prompts
-```/dev/null/example.zsh-theme#L1-5
+```bash
 PROMPT='your_left_prompt_here'     # Main prompt (left side)
 RPROMPT='your_right_prompt_here'   # Right-side prompt
 PS2='continuation_prompt'          # Multi-line continuation prompt
@@ -14,7 +14,7 @@ PS4='debug_prompt'                # Debug/trace prompt
 ## Zsh Prompt Sequences
 
 ### User and System Info
-```/dev/null/prompt-sequences.zsh-theme#L1-10
+```bash
 %n    # Username
 %m    # Hostname (short)
 %M    # Hostname (full)
@@ -28,7 +28,7 @@ PS4='debug_prompt'                # Debug/trace prompt
 ```
 
 ### Directory and Path
-```/dev/null/path-sequences.zsh-theme#L1-6
+```bash
 %~    # Current directory (with ~ for home)
 %d    # Current directory (full path)
 %c    # Current directory (basename only)
@@ -38,7 +38,7 @@ PS4='debug_prompt'                # Debug/trace prompt
 ```
 
 ### Date and Time
-```/dev/null/time-sequences.zsh-theme#L1-6
+```bash
 %D    # Date (yy-mm-dd)
 %T    # Time (24-hour HH:MM)
 %t    # Time (12-hour am/pm)
@@ -50,7 +50,7 @@ PS4='debug_prompt'                # Debug/trace prompt
 ## Color Formatting
 
 ### Basic Colors
-```/dev/null/colors.zsh-theme#L1-20
+```bash
 %{$fg[black]%}        # Black text
 %{$fg[red]%}          # Red text
 %{$fg[green]%}        # Green text
@@ -74,7 +74,7 @@ PS4='debug_prompt'                # Debug/trace prompt
 ```
 
 ### Advanced Color Options
-```/dev/null/advanced-colors.zsh-theme#L1-8
+```bash
 # 256-color support
 %{$FG[196]%}          # Bright red (196)
 %{$BG[46]%}           # Bright green background
@@ -89,7 +89,7 @@ PS4='debug_prompt'                # Debug/trace prompt
 ## Conditional Formatting
 
 ### Basic Conditionals
-```/dev/null/conditionals.zsh-theme#L1-8
+```
 %(?.✓.✗)              # ✓ if last command succeeded, ✗ if failed
 %(?..%{$fg[red]%}✗%{$reset_color%})  # Show red X only on error
 %(1j.%j job%(2j.s.).)  # Show job count if > 0
@@ -100,7 +100,7 @@ PS4='debug_prompt'                # Debug/trace prompt
 ```
 
 ### Complex Conditionals
-```/dev/null/complex-conditionals.zsh-theme#L1-5
+```
 %(?.%{$fg[green]%}.%{$fg[red]%})%?%{$reset_color%}  # Colored exit code
 %(4~|.../%3~|%~)      # Truncate long paths
 %<<string<<           # Truncate from left with string
@@ -111,7 +111,7 @@ PS4='debug_prompt'                # Debug/trace prompt
 ## Git Integration
 
 ### Git Prompt Info Function
-```/dev/null/git-config.zsh-theme#L1-15
+```bash
 # Basic git info
 $(git_prompt_info)
 
@@ -131,7 +131,7 @@ ZSH_THEME_GIT_PROMPT_BEHIND=" ⇣"
 ```
 
 ### Advanced Git Functions
-```/dev/null/git-functions.zsh-theme#L1-10
+```bash
 $(git_prompt_status)     # Show git status symbols
 $(git_prompt_ahead)      # Show ahead/behind info
 $(git_current_branch)    # Current branch name
@@ -147,14 +147,14 @@ $(parse_git_dirty)       # Check if repo is dirty
 ## Example Theme Templates
 
 ### Minimal Theme
-```/dev/null/minimal.zsh-theme#L1-3
+```bash
 PROMPT='%{$fg[cyan]%}%n%{$reset_color%}:%{$fg[green]%}%c%{$reset_color%}$(git_prompt_info) %# '
 ZSH_THEME_GIT_PROMPT_PREFIX=" (%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%})"
 ```
 
 ### Two-Line Theme
-```/dev/null/two-line.zsh-theme#L1-8
+```bash
 PROMPT='╭─ %{$fg[green]%}%n@%m%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info)
 ╰─ %{$fg[yellow]%}➤%{$reset_color%} '
 
@@ -166,7 +166,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY="*"
 ```
 
 ### Status-Rich Theme
-```/dev/null/status-rich.zsh-theme#L1-12
+```bash
 PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p%{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}[%{$fg[cyan]%}"
@@ -184,7 +184,7 @@ PS2="%{$fg[red]%}\ %{$reset_color%}"
 ## Custom Functions
 
 ### Adding Custom Functions
-```/dev/null/custom-functions.zsh-theme#L1-15
+```bash
 # Custom function for directory info
 dir_info() {
   if [[ $(pwd) == $HOME ]]; then
@@ -204,7 +204,7 @@ PROMPT='$(dir_info) %{$fg[cyan]%}%~%{$reset_color%} $(system_load) %# '
 ```
 
 ### Battery Status Function
-```/dev/null/battery-function.zsh-theme#L1-12
+```bash
 battery_status() {
   if command -v pmset &> /dev/null; then
     local battery_pct=$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)
@@ -222,7 +222,7 @@ battery_status() {
 ## Special Characters and Symbols
 
 ### Common Unicode Symbols
-```/dev/null/symbols.zsh-theme#L1-20
+```
 # Arrows
 ➤ ➜ → ← ↑ ↓ ⇡ ⇣ ▶ ◀
 
