@@ -4,7 +4,6 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="shurgentum"
 
 plugins=(
-    git
     aws
     git
     kubectl
