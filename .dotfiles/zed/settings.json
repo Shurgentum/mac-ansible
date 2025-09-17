@@ -13,9 +13,16 @@
   // ################################################################
   "agent": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3.5-sonnet"
-    }
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    },
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    },
+
+    "enable_feedback": false,
+    "profiles": {}
   },
   "features": {
     "edit_prediction_provider": "copilot"
@@ -65,6 +72,9 @@
     "font_family": "JetBrains Mono",
     "font_size": 13,
     "font_weight": 600,
+    "font_features": {
+      "calt": true
+    },
     "line_height": { "custom": 1.45 }
   },
 
@@ -115,6 +125,7 @@
     "catppuccin-icons": true,
 
     "dockerfile": true,
+    "git-firefly": true,
     "html": true,
     "ini": true,
     "lua": true,
