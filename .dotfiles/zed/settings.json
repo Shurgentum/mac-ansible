@@ -95,7 +95,7 @@
   "extend_comment_on_newline": false,
   "languages": {
     "Python": {
-      "language_servers": ["pylsp", "ruff", "!pyright"],
+      "language_servers": ["basedpyright", "ruff"],
       "format_on_save": "on",
       "code_actions_on_format": {
         "source.organizeImports.ruff": true
