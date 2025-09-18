@@ -93,6 +93,9 @@
   // Language-specific
   // ################################################################
   "extend_comment_on_newline": false,
+  "file_types": {
+    "Shell Script": ["*.zsh-theme"]
+  },
   "languages": {
     "Python": {
       "language_servers": ["basedpyright", "ruff"],
