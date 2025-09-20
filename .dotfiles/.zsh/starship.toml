@@ -7,9 +7,9 @@ add_newline = true
 format = """\
 $directory\
 $git_branch\
-$aws\
 $fill\
-${custom.kubectx}:${custom.kubens}
+${custom.kubectx}:${custom.kubens}\
+$aws
 $character\
 """
 
@@ -17,7 +17,7 @@ $character\
 symbol = " "
 
 [git_branch]
-format = 'on [$symbol$branch]($style) '
+format = 'on [$symbol$branch]($style)'
 style = 'bold red'
 
 [git_status]
@@ -34,3 +34,7 @@ style = 'bold red'
 command = 'kubectl config view --output "jsonpath={..namespace}"'
 format = '[$output]($style)'
 when = true
+
+
+[aws]
+format = ' on $symbol[$profile](bold fg:yellow)(:[$region](fg:yellow))'

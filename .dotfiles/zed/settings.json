@@ -69,7 +69,7 @@
   "terminal": {
     "blinking": "on",
     "cursor_shape": "bar",
-    "font_family": "JetBrains Mono",
+    "font_family": "JetBrainsMono Nerd Font",
     "font_size": 13,
     "font_weight": 600,
     "font_features": {

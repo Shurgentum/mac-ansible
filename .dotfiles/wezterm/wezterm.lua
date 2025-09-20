@@ -19,7 +19,7 @@ config.initial_rows = 30
 config.default_cursor_style = 'BlinkingUnderline'
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 config.font =
-    wezterm.font('JetBrains Mono', { weight = 'Bold', italic = false })
+    wezterm.font('JetBrainsMono Nerd Font', { weight = 'Bold', italic = false })
 
 -- Window specific
 config.window_close_confirmation = 'NeverPrompt'

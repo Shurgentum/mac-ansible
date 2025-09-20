@@ -94,8 +94,8 @@ all_brew_cask_packages:
 
   # Fonts
   - font-jetbrains-mono
+  - font-jetbrains-mono-nerd-font
   - font-roboto-flex
-  - font-work-sans
 
   # Other
   - 1password
