@@ -69,7 +69,7 @@
   "terminal": {
     "blinking": "on",
     "cursor_shape": "bar",
-    "font_family": "JetBrains Mono",
+    "font_family": "JetBrainsMono Nerd Font",
     "font_size": 13,
     "font_weight": 600,
     "font_features": {
@@ -93,9 +93,12 @@
   // Language-specific
   // ################################################################
   "extend_comment_on_newline": false,
+  "file_types": {
+    "Shell Script": ["*.zsh-theme"]
+  },
   "languages": {
     "Python": {
-      "language_servers": ["pylsp", "ruff", "!pyright"],
+      "language_servers": ["basedpyright", "ruff"],
       "format_on_save": "on",
       "code_actions_on_format": {
         "source.organizeImports.ruff": true

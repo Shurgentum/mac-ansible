@@ -9,6 +9,7 @@
     - "$HOME/.config"
     - "$HOME/.config/wezterm"
     - "$HOME/.config/zed"
+    - "$HOME/.config/starship"
 
 - name: Copy dotfiles in home directory
   ansible.builtin.copy:
