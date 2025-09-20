@@ -6,18 +6,7 @@
     - ./defaults.yml
     - ./vars/static.yml
 
-  handlers:
-    - name: Remove Oh My Zsh install file
-      ansible.builtin.import_tasks:
-        file: handlers/general.yml
-
   tasks:
-    - name: Install Oh My Zsh
-      ansible.builtin.import_tasks:
-        file: tasks/omz.yml
-      tags:
-        - omz
-
     - name: Global configuration
       ansible.builtin.import_tasks:
         file: tasks/global.yml

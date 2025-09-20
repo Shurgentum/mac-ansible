@@ -1,18 +1,4 @@
 ---
-# Oh My Zsh
-omz_plugins_dir: "$HOME/.oh-my-zsh/custom/plugins/"
-omz_plugins:
-  - {
-      name: "zsh-autosuggestions",
-      repo: "https://github.com/zsh-users/zsh-autosuggestions",
-      branch: "master",
-    }
-  - {
-      name: "zsh-syntax-highlighting",
-      repo: "https://github.com/zsh-users/zsh-syntax-highlighting.git",
-      branch: "master",
-    }
-
 # dotfiles
 dotfiles_dest: "$HOME/.dotfiles"
 
@@ -21,10 +7,7 @@ symlinks:
   # ZSH
   - { src: ".osx.sh", dest: "$HOME/.osx.sh" }
   - { src: ".zsh/.zshrc", dest: "$HOME/.zshrc" }
-  - {
-      src: ".zsh/themes/shurgentum.zsh-theme",
-      dest: "$HOME/.oh-my-zsh/custom/themes/shurgentum.zsh-theme",
-    }
+  - { src: ".zsh/starship.toml", dest: "$HOME/.config/starship/starship.toml" }
   # SSH
   - { src: ".ssh/config", dest: "$HOME/.ssh/config" }
   # WezTerm
@@ -58,6 +41,11 @@ all_brew_packages:
   - jq
   - watch
   - wget
+
+  # Shell customization
+  - starship
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
 
   # Kubernetes tools
   - kubernetes-cli

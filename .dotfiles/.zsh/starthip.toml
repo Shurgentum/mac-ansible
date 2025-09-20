@@ -1,0 +1,36 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+format = """\
+$directory\
+$git_branch\
+$aws\
+$fill\
+${custom.kubectx}:${custom.kubens}
+$character\
+"""
+
+[fill]
+symbol = " "
+
+[git_branch]
+format = 'on [$symbol$branch]($style) '
+style = 'bold red'
+
+[git_status]
+disabled = true
+
+[custom.kubectx]
+style = 'bold blue'
+command = "echo \ue81d ${$(kubectl config current-context)##*/}"
+format = '[$output]($style)'
+when = true
+
+[custom.kubens]
+style = 'bold red'
+command = 'kubectl config view --output "jsonpath={..namespace}"'
+format = '[$output]($style)'
+when = true
