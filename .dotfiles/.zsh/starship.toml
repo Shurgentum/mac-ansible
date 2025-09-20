@@ -8,7 +8,7 @@ format = """\
 $directory\
 $git_branch\
 $fill\
-${custom.kubectx}:${custom.kubens}\
+${custom.kubectx}(:${custom.kubens})\
 $aws
 $character\
 """
@@ -37,4 +37,5 @@ when = true
 
 
 [aws]
-format = ' on $symbol[$profile](bold fg:yellow)(:[$region](fg:yellow))'
+format = ' on [$profile](bold fg:yellow)(:[$region](fg:yellow))'
+force_display = true

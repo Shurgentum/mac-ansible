@@ -7,15 +7,15 @@
     - ./vars/static.yml
 
   tasks:
+    - name: Homebrew
+      ansible.builtin.import_tasks:
+        file: tasks/brew.yml
+
     - name: Global configuration
       ansible.builtin.import_tasks:
         file: tasks/global.yml
       tags:
         - global
-
-    - name: Homebrew
-      ansible.builtin.import_tasks:
-        file: tasks/brew.yml
 
     - name: Mac App Store
       ansible.builtin.import_tasks:
