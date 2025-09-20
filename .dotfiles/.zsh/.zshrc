@@ -1,31 +1,9 @@
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="shurgentum"
-
-plugins=(
-    aws
-    git
-    kubectl
-    kube-ps1
-
-    # Custom
-    # https://github.com/zsh-users/zsh-autosuggestions
-    zsh-autosuggestions
-    # https://github.com/zsh-users/zsh-syntax-highlighting
-    zsh-syntax-highlighting
-)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
 # TFSwitch
 path+=('/Users/shurgentum/bin')
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-    [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
+    [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
 
 # AWS Profile switcher
 alias awsp="source _awsp"
@@ -36,3 +14,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - zsh)"
 
 alias rosetta=arch -x86_64
+
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
+eval "$(starship init zsh)"

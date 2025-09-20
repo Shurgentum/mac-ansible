@@ -6,27 +6,16 @@
     - ./defaults.yml
     - ./vars/static.yml
 
-  handlers:
-    - name: Remove Oh My Zsh install file
-      ansible.builtin.import_tasks:
-        file: handlers/general.yml
-
   tasks:
-    - name: Install Oh My Zsh
+    - name: Homebrew
       ansible.builtin.import_tasks:
-        file: tasks/omz.yml
-      tags:
-        - omz
+        file: tasks/brew.yml
 
     - name: Global configuration
       ansible.builtin.import_tasks:
         file: tasks/global.yml
       tags:
         - global
-
-    - name: Homebrew
-      ansible.builtin.import_tasks:
-        file: tasks/brew.yml
 
     - name: Mac App Store
       ansible.builtin.import_tasks:
