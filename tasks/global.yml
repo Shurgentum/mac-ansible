@@ -13,7 +13,7 @@
 
 - name: Copy dotfiles in home directory
   ansible.builtin.copy:
-    src: "{{ playbook_dir }}/.dotfiles/"
+    src: "{{ playbook_dir }}/dotfiles/"
     dest: "{{ dotfiles_dest }}"
 
 - name: Create all symlinks
