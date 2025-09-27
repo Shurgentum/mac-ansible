@@ -2,7 +2,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Inserts a blank line between shell prompts
-add_newline = true
+add_newline = false
 
 format = """\
 $directory\
@@ -12,6 +12,7 @@ ${custom.kubectx}(:${custom.kubens})\
 $aws
 $character\
 """
+continuation_prompt = '▶ '
 
 [fill]
 symbol = " "
