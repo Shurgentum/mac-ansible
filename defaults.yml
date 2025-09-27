@@ -189,22 +189,18 @@ dock_add:
     path: "/Applications/WezTerm.app"
     pos: 11
 
-  - name: "Visual Studio Code"
-    path: "/Applications/Visual\ Studio\ Code.app"
-    pos: 12
-
   - name: "Zed"
     path: "/Applications/Zed.app"
-    pos: 13
+    pos: 12
 
   - name: "GitButler"
     path: "/Applications/GitButler.app"
-    pos: 14
+    pos: 13
 
   - name: "System Settings"
     path: "/System/Applications/System\ Settings.app"
-    pos: 15
+    pos: 14
 
   - name: "1Password"
     path: "/Applications/1Password.app"
-    pos: 16
+    pos: 15
