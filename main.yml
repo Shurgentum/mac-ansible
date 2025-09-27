@@ -28,3 +28,9 @@
         file: tasks/dock.yml
       tags:
         - dock
+
+    - name: Run configuration script
+      ansible.builtin.import_tasks:
+        file: tasks/defaults.yml
+      tags:
+        - defaults

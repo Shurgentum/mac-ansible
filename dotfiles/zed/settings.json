@@ -13,12 +13,12 @@
   // ################################################################
   "agent": {
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "copilot_chat",
+      "model": "gemini-2.5-pro"
     },
     "inline_assistant_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "copilot_chat",
+      "model": "gemini-2.5-pro"
     },
 
     "enable_feedback": false,
@@ -72,21 +72,24 @@
     "font_family": "JetBrainsMono Nerd Font",
     "font_size": 13,
     "font_weight": 600,
-    "font_features": {
-      "calt": true
-    },
+    "font_features": { "calt": true },
     "line_height": { "custom": 1.45 }
   },
 
   // Project panel
   "project_panel": {
+    "dock": "left",
     "entry_spacing": "standard",
     "indent_size": 15
   },
 
-  // Panels docking
+  // Git panel
   "git_panel": {
     "dock": "right"
+  },
+
+  "experimental.theme_overrides": {
+    "status_bar.background": "#3a1254"
   },
 
   // ################################################################
@@ -121,7 +124,6 @@
   // ################################################################
   // General
   // ################################################################
-
   // Extensions
   "auto_install_extensions": {
     "catppuccin": true,
@@ -133,9 +135,7 @@
     "ini": true,
     "lua": true,
     "terraform": true,
-    "toml": true,
-
-    "ruff": true
+    "toml": true
   },
 
   // Send only crash reports
