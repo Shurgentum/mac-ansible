@@ -14,11 +14,11 @@
   "agent": {
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gemini-2.5-pro"
+      "model": "claude-sonnet-4"
     },
     "inline_assistant_model": {
       "provider": "copilot_chat",
-      "model": "gemini-2.5-pro"
+      "model": "claude-sonnet-4"
     },
 
     "enable_feedback": false,
@@ -43,19 +43,20 @@
   },
   "icon_theme": "Catppuccin Latte",
 
-  // General font size
   "ui_font_size": 16,
   "ui_font_weight": 400,
   "ui_font_family": "Roboto Flex",
-  // Editor font size
-  "buffer_font_size": 15,
+
+  "buffer_font_size": 14.5,
   "buffer_font_weight": 400,
-  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_fallbacks": ["JetBrains Mono", ".ZedMono"],
+  "buffer_font_features": { "calt": true },
   "buffer_line_height": "standard",
-  "gutter": {
-    // 3 digits is actually enough to display 4
-    "min_line_number_digits": 3
-  },
+
+  // 3 digits is actually enough to display 4
+  "gutter": { "min_line_number_digits": 3 },
+
   "minimap": {
     "show": "auto",
     "current_line_highlight": "all"
@@ -69,9 +70,11 @@
   "terminal": {
     "blinking": "on",
     "cursor_shape": "bar",
-    "font_family": "JetBrainsMono Nerd Font",
+
     "font_size": 13,
     "font_weight": 600,
+    "font_family": "JetBrainsMono Nerd Font",
+    "font_fallbacks": ["JetBrains Mono", ".ZedMono"],
     "font_features": { "calt": true },
     "line_height": { "custom": 1.45 }
   },
