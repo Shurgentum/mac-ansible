@@ -1,6 +1,6 @@
 ---
 # Dotfiles configuration
-dotfiles_dest: "$HOME/.dotfiles"
+dotfiles_dest: "{{ ansible_env.HOME }}/.dotfiles"
 
 # Symlinks to create
 symlinks:
@@ -115,7 +115,7 @@ macbook_brew_cask_packages:
 
 # Mac App Store (MAS) configuration
 # Note: Requires being signed into the App Store for installations
-install_apps:
+mas_install_apps:
   # Free apps
   - { id: "1440147259", name: "AdGuard for Safari" }
   - { id: "409201541", name: "Apple Pages" }
