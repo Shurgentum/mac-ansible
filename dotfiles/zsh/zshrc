@@ -1,5 +1,5 @@
 # TFSwitch
-path+=('/Users/shurgentum/bin')
+path+=("$HOME/bin")
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
