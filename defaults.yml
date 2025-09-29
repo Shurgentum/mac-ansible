@@ -1,5 +1,5 @@
 ---
-# dotfiles
+# Dotfiles configuration
 dotfiles_dest: "$HOME/.dotfiles"
 
 # Symlinks to create
@@ -107,12 +107,14 @@ all_brew_cask_packages:
   - cloudflare-warp
   - google-drive
 
+# MacBook-specific packages (only installed on MacBook models)
 macbook_brew_cask_packages:
   # Battery management
   - aldente
   # - bartender
 
-# MAS
+# Mac App Store (MAS) configuration
+# Note: Requires being signed into the App Store for installations
 install_apps:
   # Free apps
   - { id: "1440147259", name: "AdGuard for Safari" }
@@ -130,6 +132,8 @@ uninstall_apps:
   - { id: "682658836", name: "GarageBand" }
   - { id: "408981434", name: "iMovie" }
 
+# Dock configuration
+# Items to remove from dock (by name)
 dock_remove:
   - Launchpad
   - Messages
@@ -148,6 +152,7 @@ dock_remove:
   - "App Store"
   - "iPhone Mirroring"
 
+# Items to add to dock (with position)
 dock_add:
   - name: "Safari"
     path: "/System/Cryptexes/App/System/Applications/Safari.app"
