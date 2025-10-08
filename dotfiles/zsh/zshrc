@@ -1,5 +1,5 @@
 # TFSwitch
-path+=('/Users/shurgentum/bin')
+path+=("$HOME/bin")
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -15,8 +15,16 @@ eval "$(pyenv init - zsh)"
 
 alias rosetta=arch -x86_64
 
+# Plugins
 source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+# zsh-syntax-highlighting must load before zsh-history-substring-search for it to work properly
+source "$(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=''
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=''
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 eval "$(starship init zsh)"
