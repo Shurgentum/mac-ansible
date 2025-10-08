@@ -4,28 +4,62 @@
     name: dockutil
     state: present
 
-- name: Remove configured Dock items.
-  ansible.builtin.include_tasks: dock-remove.yml
-  loop: "{{ dock_remove }}"
-  loop_control:
-    extended: true
-    extended_allitems: false
+- name: Get current dock configuration
+  ansible.builtin.command:
+    cmd: dockutil --list
+  register: current_dock
+  changed_when: false
+  failed_when: false
 
-- name: Add configured Dock items.
-  ansible.builtin.include_tasks: dock-add.yml
-  loop: "{{ dock_add }}"
-  loop_control:
-    extended: true
-    extended_allitems: false
+- name: Remove configured Dock items
+  ansible.builtin.command:
+    cmd: dockutil --remove '{{ item }}' --no-restart
+  loop: "{{ dock_remove | default([]) }}"
+  when:
+    - current_dock.rc == 0
+    - item in current_dock.stdout
+  register: dock_remove_result
+  changed_when: dock_remove_result.rc == 0
+  failed_when:
+    - dock_remove_result.rc != 0
+    - "'was not found' not in dock_remove_result.stderr"
 
-- name: Position configured Dock items.
-  ansible.builtin.include_tasks: dock-position.yml
-  loop: "{{ dock_add }}"
-  loop_control:
-    extended: true
-    extended_allitems: false
+- name: Add configured Dock items
+  ansible.builtin.command:
+    cmd: dockutil --add '{{ item.path }}' --label '{{ item.name }}' --no-restart
+  loop: "{{ dock_add | default([]) }}"
+  when:
+    - item.name is defined
+    - item.path is defined
+    - current_dock.rc == 0
+    - item.name not in current_dock.stdout or 'recent-apps' in (current_dock.stdout | regex_search(item.name + '.*recent-apps') | default(''))
+  register: dock_add_result
+  changed_when: dock_add_result.rc == 0
+  failed_when:
+    - dock_add_result.rc != 0
+    - "'already exists' not in dock_add_result.stderr"
 
-- name: Reset Dock
+- name: Position configured Dock items
+  ansible.builtin.command:
+    cmd: dockutil --move '{{ item.name }}' --position '{{ item.pos }}' --no-restart
+  loop: "{{ dock_add | default([]) }}"
+  when:
+    - item.name is defined
+    - item.pos is defined
+    - current_dock.rc == 0
+    - item.name in current_dock.stdout
+    - not (current_dock.stdout | regex_search(item.name + '.*slot ' + (item.pos | string)))
+  register: dock_position_result
+  changed_when: dock_position_result.rc == 0
+  failed_when:
+    - dock_position_result.rc != 0
+    - "'was not found' not in dock_position_result.stderr"
+
+- name: Restart Dock to apply changes
   ansible.builtin.command:
     cmd: killall Dock
-  changed_when: false
+  changed_when: true
+  when: >
+    (dock_remove_result is defined and dock_remove_result.changed) or
+    (dock_add_result is defined and dock_add_result.changed) or
+    (dock_position_result is defined and dock_position_result.changed)

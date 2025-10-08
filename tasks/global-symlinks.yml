@@ -1,17 +1,81 @@
 ---
-- name: Get the destination stats - {{ item.src }}
+- name: Validate symlink source exists - {{ item.src }}
   ansible.builtin.stat:
-    path: "{{ item.dest }}"
-  register: file_status
+    path: "{{ dotfiles_dest | expanduser }}/{{ item.src }}"
+  register: symlink_source_stat
+  failed_when: not symlink_source_stat.stat.exists
 
-- name: Check stats and free space if needed - {{ item.src }}
-  ansible.builtin.file:
-    path: "{{ item.dest }}"
-    state: absent
-  when: file_status.stat.exists and not file_status.stat.islnk
+- name: Expand destination path - {{ item.src }}
+  ansible.builtin.set_fact:
+    expanded_dest: "{{ item.dest | expanduser }}"
 
-- name: Create symlinks - {{ item.src }}
+- name: Create parent directory for symlink destination - {{ item.src }}
   ansible.builtin.file:
-    src: "{{ dotfiles_dest }}/{{ item.src }}"
-    dest: "{{ item.dest }}"
+    path: "{{ expanded_dest | dirname }}"
+    state: directory
+    mode: "0755"
+  when: (expanded_dest | dirname) != (ansible_env.HOME)
+
+- name: Check if destination exists - {{ item.src }}
+  ansible.builtin.stat:
+    path: "{{ expanded_dest }}"
+  register: dest_stat
+
+- name: Handle existing destination - {{ item.src }}
+  block:
+    - name: Check if existing destination is correct symlink - {{ item.src }}
+      ansible.builtin.stat:
+        path: "{{ expanded_dest }}"
+        follow: false
+      register: dest_link_stat
+
+    - name: Remove incorrect symlink or file - {{ item.src }}
+      ansible.builtin.file:
+        path: "{{ expanded_dest }}"
+        state: absent
+      when: >
+        dest_stat.stat.exists and (
+          not dest_link_stat.stat.islnk or
+          dest_link_stat.stat.lnk_target != (dotfiles_dest | expanduser) + '/' + item.src
+        )
+
+    - name: Backup existing file if not a symlink - {{ item.src }}
+      ansible.builtin.copy:
+        src: "{{ expanded_dest }}"
+        dest: "{{ expanded_dest }}.backup.{{ ansible_date_time.epoch }}"
+        mode: preserve
+      when:
+        - dest_stat.stat.exists
+        - not dest_link_stat.stat.islnk
+        - dest_stat.stat.isreg
+      ignore_errors: true
+
+  when: dest_stat.stat.exists
+
+- name: Create symlink - {{ item.src }}
+  ansible.builtin.file:
+    src: "{{ dotfiles_dest | expanduser }}/{{ item.src }}"
+    dest: "{{ expanded_dest }}"
     state: link
+    force: true
+  register: symlink_result
+
+- name: Verify symlink creation - {{ item.src }}
+  ansible.builtin.stat:
+    path: "{{ expanded_dest }}"
+    follow: false
+  register: final_symlink_stat
+  failed_when: >
+    not final_symlink_stat.stat.exists or
+    not final_symlink_stat.stat.islnk or
+    final_symlink_stat.stat.lnk_target != (dotfiles_dest | expanduser) + '/' + item.src
+
+- name: Set appropriate permissions for SSH config - {{ item.src }}
+  ansible.builtin.file:
+    path: "{{ expanded_dest }}"
+    mode: "0600"
+    follow: true
+  when:
+    - symlink_result is succeeded
+    - "'.ssh/' in expanded_dest"
+    - item.src == 'ssh/config'
