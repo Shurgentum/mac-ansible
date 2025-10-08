@@ -45,6 +45,7 @@ all_brew_packages:
   # Shell customization
   - starship
   - zsh-autosuggestions
+  - zsh-history-substring-search
   - zsh-syntax-highlighting
 
   # Kubernetes tools
@@ -88,6 +89,7 @@ all_brew_cask_packages:
   # Development tools
   - docker
   - gitbutler
+  - postman
   - visual-studio-code
   - wezterm
   - zed
