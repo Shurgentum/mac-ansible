@@ -128,7 +128,7 @@ mas_install_apps:
   - { id: "904280696", name: "Things 3" }
   - { id: "1289583905", name: "Pixelmator Pro" }
 
-uninstall_apps:
+mas_uninstall_apps:
   - { id: "682658836", name: "GarageBand" }
   - { id: "408981434", name: "iMovie" }
 
