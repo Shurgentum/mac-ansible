@@ -146,6 +146,7 @@
     "html": true,
     "ini": true,
     "lua": true,
+    "make": true,
     "terraform": true,
     "toml": true
   },

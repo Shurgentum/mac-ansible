@@ -34,19 +34,21 @@ all_brew_packages:
   - libb2
   - zstd
 
+  # Shell customization & utilities
+  - fastfetch
+  - starship
+  - zsh-autosuggestions
+  - zsh-history-substring-search
+  - zsh-syntax-highlighting
+
   # Utilities
   - awscli
   - argocd
   - gh
   - jq
+  - sops
   - watch
   - wget
-
-  # Shell customization
-  - starship
-  - zsh-autosuggestions
-  - zsh-history-substring-search
-  - zsh-syntax-highlighting
 
   # Kubernetes tools
   - kubernetes-cli
