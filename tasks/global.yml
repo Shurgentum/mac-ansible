@@ -33,9 +33,3 @@
     extended: true
     extended_allitems: false
   when: symlinks is defined and symlinks | length > 0
-
-- name: Set execute permission on osx.sh script
-  ansible.builtin.file:
-    path: "{{ ansible_env.HOME }}/.osx.sh"
-    mode: "0755"
-    state: file
