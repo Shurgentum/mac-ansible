@@ -5,7 +5,6 @@ dotfiles_dest: "{{ ansible_env.HOME }}/.dotfiles"
 # Symlinks to create
 symlinks:
   # ZSH
-  - { src: "osx.sh", dest: "$HOME/.osx.sh" }
   - { src: "zsh/zshrc", dest: "$HOME/.zshrc" }
   - { src: "zsh/starship.toml", dest: "$HOME/.config/starship/starship.toml" }
   # SSH
