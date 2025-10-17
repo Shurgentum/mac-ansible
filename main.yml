@@ -36,6 +36,12 @@
         msg: "{{ 'Xcode Command Line Tools installed at: ' + xcode_path.stdout if xcode_path.rc == 0 else 'Xcode Command Line Tools not found. Install with: xcode-select --install' }}"
 
   tasks:
+    - name: Apply macOS system defaults
+      ansible.builtin.import_tasks:
+        file: tasks/defaults.yml
+      tags:
+        - defaults
+
     - name: Install Homebrew packages
       ansible.builtin.import_tasks:
         file: tasks/brew.yml
@@ -60,11 +66,6 @@
       tags:
         - dock
 
-    - name: Apply macOS system defaults
-      ansible.builtin.import_tasks:
-        file: tasks/defaults.yml
-      tags:
-        - defaults
 
   post_tasks:
     - name: Display completion message

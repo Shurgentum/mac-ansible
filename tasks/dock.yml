@@ -4,28 +4,83 @@
     name: dockutil
     state: present
 
-- name: Remove configured Dock items.
-  ansible.builtin.include_tasks: dock-remove.yml
-  loop: "{{ dock_remove }}"
-  loop_control:
-    extended: true
-    extended_allitems: false
+- name: Get current dock configuration
+  ansible.builtin.command:
+    cmd: dockutil --list
+  register: current_dock
+  changed_when: false
+  failed_when: false
 
-- name: Add configured Dock items.
-  ansible.builtin.include_tasks: dock-add.yml
-  loop: "{{ dock_add }}"
+- name: Remove configured Dock items
+  ansible.builtin.command:
+    cmd: dockutil --remove '{{ item }}' --no-restart
+  loop: "{{ dock_remove | default([]) }}"
+  when:
+    - current_dock.rc == 0
+    - item in current_dock.stdout
+  register: dock_remove_result
+  changed_when: dock_remove_result.rc == 0
+  failed_when:
+    - dock_remove_result.rc != 0
+    - "'was not found' not in dock_remove_result.stderr"
+
+- name: Add configured Dock items
+  loop: "{{ dock_add | default([]) }}"
   loop_control:
-    extended: true
-    extended_allitems: false
+    label: "{{ item.name | default(item.path) }}"
+  ansible.builtin.command:
+    cmd: >-
+      dockutil
+      --add '{{ item.path }}'
+      --label '{{ item.name }}'
+      --position '{{ item.pos }}'
+      --no-restart
+  when:
+    - item.name is defined
+    - item.path is defined
+    - current_dock.rc == 0
+    - item.name not in current_dock.stdout
+  register: dock_add_result
+  changed_when: dock_add_result.rc == 0
+  failed_when:
+    - dock_add_result.rc != 0
+    - "'already exists' not in dock_add_result.stderr"
+
+# TODO: Optimize positioning and error handling
+- name: Find dock items by name
+  loop: "{{ dock_add | default([]) }}"
+  loop_control:
+    label: "{{ item.name }}"
+  ansible.builtin.command:
+    cmd: dockutil --find '{{ item.name }}'
+  when:
+    - item.name is defined
+  register: dock_item_positions
+  changed_when: false
+  failed_when:
+    - dock_item_positions.rc != 0
 
 - name: Position configured Dock items.
-  ansible.builtin.include_tasks: dock-position.yml
   loop: "{{ dock_add }}"
   loop_control:
-    extended: true
-    extended_allitems: false
+    label: "{{ item.name }} : {{ item.pos }}"
+  ansible.builtin.command:
+    cmd: dockutil --move '{{ item.name }}' --position '{{ item.pos }}' --no-restart
+  when:
+    - item.name is defined
+    - item.pos is defined
+    - '"slot " + item.pos|string not in dock_item_positions.results[item.pos-1].stdout'
+  register: dock_position_result
+  changed_when: dock_position_result.rc == 0
+  failed_when:
+    - dock_position_result.rc != 0
+    - "'was not found' not in dock_position_result.stderr"
 
-- name: Reset Dock
+- name: Restart Dock to apply changes
   ansible.builtin.command:
     cmd: killall Dock
-  changed_when: false
+  changed_when: true
+  when: >
+    (dock_remove_result is defined and dock_remove_result.changed) or
+    (dock_add_result is defined and dock_add_result.changed) or
+    (dock_position_result is defined and dock_position_result.changed)

@@ -132,26 +132,7 @@ mas_uninstall_apps:
   - { id: "408981434", name: "iMovie" }
 
 # Dock configuration
-# Items to remove from dock (by name)
-dock_remove:
-  - Launchpad
-  - Messages
-  - Mail
-  - Maps
-  - Photos
-  - FaceTime
-  - Contacts
-  - Reminders
-  - Freeform
-  - TV
-  - Music
-  - Pages
-  - Numbers
-  - Keynote
-  - "App Store"
-  - "iPhone Mirroring"
-
-# Items to add to dock (with position)
+# Items to add to dock
 dock_add:
   - name: "Safari"
     path: "/System/Cryptexes/App/System/Applications/Safari.app"
@@ -212,3 +193,22 @@ dock_add:
   - name: "1Password"
     path: "/Applications/1Password.app"
     pos: 15
+
+# Items to remove from dock
+dock_remove:
+  - Launchpad
+  - Messages
+  - Mail
+  - Maps
+  - Photos
+  - FaceTime
+  - Contacts
+  - Reminders
+  - Freeform
+  - TV
+  - Music
+  - Pages
+  - Numbers
+  - Keynote
+  - "App Store"
+  - "iPhone Mirroring"
