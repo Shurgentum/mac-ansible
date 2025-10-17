@@ -1,19 +1,33 @@
 # TFSwitch
 path+=("$HOME/bin")
 
+# Initialize zsh completion system
+autoload -Uz compinit && compinit
+
+# Case-insensitive completion configuration
+# m:{a-z}={A-Z} - Match lowercase letters to uppercase (hello matches HELLO)
+# m:{a-zA-Z}={A-Za-z} - Match any case to any other case (bidirectional)
+# r:|[._-]=* r:|=* - Allow partial matching after dots, underscores, hyphens
+# l:|=* r:|=* - Allow partial matching from left side of words
+zstyle ':completion:*' matcher-list \
+  'm:{a-z}={A-Z}' \
+  'm:{a-zA-Z}={A-Za-z}' \
+  'r:|[._-]=* r:|=*' \
+  'l:|=* r:|=*'
+
+# Enable interactive menu for completions (use arrow keys to navigate)
+zstyle ':completion:*' menu select
+# Use colors in completion menu (empty string uses default colors)
+zstyle ':completion:*' list-colors ''
+
 # NVM
 export NVM_DIR="$HOME/.nvm"
     [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
-
-# AWS Profile switcher
-alias awsp="source _awsp"
 
 # PyENV
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
-
-alias rosetta=arch -x86_64
 
 # Plugins
 source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
@@ -25,6 +39,12 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=''
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=''
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+# Aliases
+alias awsp="source _awsp"
+alias rosetta=arch -x86_64
+
+alias ll='ls -laGh'
 
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 eval "$(starship init zsh)"

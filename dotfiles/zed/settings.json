@@ -28,7 +28,7 @@
     "edit_prediction_provider": "copilot"
   },
   "edit_predictions": {
-    "mode": "subtle"
+    "mode": "eager"
   },
 
   // ################################################################
@@ -86,6 +86,9 @@
     "indent_size": 15
   },
 
+  "git": {
+    "blame": { "show_avatar": true }
+  },
   // Git panel
   "git_panel": {
     "dock": "right"
@@ -106,10 +109,16 @@
     "Python": {
       "language_servers": ["basedpyright", "ruff"],
       "format_on_save": "on",
-      "code_actions_on_format": {
-        "source.organizeImports.ruff": true
-      },
-      "formatter": [{ "language_server": { "name": "ruff" } }]
+      "formatter": [
+        {
+          "code_action": "source.organizeImports.ruff"
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
     }
   },
 
@@ -137,6 +146,7 @@
     "html": true,
     "ini": true,
     "lua": true,
+    "make": true,
     "terraform": true,
     "toml": true
   },

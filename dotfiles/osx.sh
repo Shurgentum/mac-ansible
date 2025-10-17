@@ -108,6 +108,3 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 # Disable in-app rating requests from apps downloaded from the App Store.
 defaults write com.apple.appstore InAppReviewEnabled -int 0
-
-# Write sha256 of this script to track if it has changed
-shasum -a 256 "$HOME/.osx.sh" | awk '{print $1}' > "$HOME/.osx.sh.done"
