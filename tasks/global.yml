@@ -26,10 +26,13 @@
     backup: false
   register: dotfiles_copy_result
 
-- name: Create symlinks for dotfiles
-  ansible.builtin.include_tasks: global-symlinks.yml
+- name: Create symlinks
   loop: "{{ symlinks | default([]) }}"
   loop_control:
-    extended: true
-    extended_allitems: false
+    label: "{{ item.src }}"
+  ansible.builtin.file:
+    src: "{{ dotfiles_dest }}/{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+    force: true
   when: symlinks is defined and symlinks | length > 0
