@@ -75,6 +75,7 @@ all_brew_cask_packages:
   # - unnaturalscrollwheels
 
   # Productivity
+  - notchnook
   - notion
   - readdle-spark
 
