@@ -49,6 +49,7 @@ eval "$(pyenv init - zsh)"
 alias awsp="source _awsp"
 alias rosetta=arch -x86_64
 
+alias k='kubectl'
 alias ll='ls -laGh'
 
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml

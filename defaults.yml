@@ -53,11 +53,13 @@ all_brew_packages:
   - kubernetes-cli
   - kubectx
   - helm
+  - helm-ls
   - minikube
 
   # Programming tools
   - go
   - gopls
+  - golangci-lint
   - nvm
   - pyenv
   - pyenv-virtualenv
