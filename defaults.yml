@@ -44,7 +44,9 @@ all_brew_packages:
   - awscli
   - argocd
   - gh
+  - htop
   - jq
+  - yq
   - sops
   - watch
   - wget

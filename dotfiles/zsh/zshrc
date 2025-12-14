@@ -1,7 +1,10 @@
-# TFSwitch
+# Executables
 path+=("$HOME/bin")
+path+=("$HOME/go/bin")
 
 # Global Environment Variables
+export GOROOT=$HOME/go
+
 export HOMEBREW_NO_ENV_HINTS=1
 
 export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
@@ -48,9 +51,11 @@ eval "$(pyenv init - zsh)"
 # Aliases
 alias awsp="source _awsp"
 alias rosetta=arch -x86_64
+alias watch='watch -n 2 --color '
 
 alias k='kubectl'
 alias ll='ls -laGh'
 
+# Starship Prompt
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 eval "$(starship init zsh)"

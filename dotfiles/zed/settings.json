@@ -14,7 +14,7 @@
   "agent": {
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5"
+      "model": "claude-opus-4.5"
     },
     "inline_assistant_model": {
       "provider": "copilot_chat",
@@ -94,8 +94,10 @@
     "dock": "right"
   },
 
-  "experimental.theme_overrides": {
-    "status_bar.background": "#3a1254"
+  "theme_overrides": {
+    "Catppuccin Macchiato": {
+      "status_bar.background": "#3a1254"
+    }
   },
 
   // ################################################################
@@ -144,9 +146,11 @@
     "dockerfile": true,
     "git-firefly": true,
     "html": true,
+    "helm": true,
     "ini": true,
     "lua": true,
     "make": true,
+    "proto": true,
     "terraform": true,
     "toml": true
   },
