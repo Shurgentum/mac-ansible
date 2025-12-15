@@ -3,7 +3,6 @@ path+=("$HOME/bin")
 path+=("$HOME/go/bin")
 
 # Global Environment Variables
-export GOROOT=$HOME/go
 
 export HOMEBREW_NO_ENV_HINTS=1
 
