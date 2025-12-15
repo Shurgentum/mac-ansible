@@ -42,17 +42,17 @@
       tags:
         - defaults
 
-    - name: Install Homebrew packages
-      ansible.builtin.import_tasks:
-        file: tasks/brew.yml
-      tags:
-        - brew
-
     - name: Configure global settings and dotfiles
       ansible.builtin.import_tasks:
         file: tasks/global.yml
       tags:
         - global
+
+    - name: Install Homebrew packages
+      ansible.builtin.import_tasks:
+        file: tasks/brew.yml
+      tags:
+        - brew
 
     - name: Install Mac App Store apps
       ansible.builtin.import_tasks:
@@ -65,7 +65,6 @@
         file: tasks/dock.yml
       tags:
         - dock
-
 
   post_tasks:
     - name: Display completion message

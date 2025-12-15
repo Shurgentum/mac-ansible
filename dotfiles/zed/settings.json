@@ -14,11 +14,11 @@
   "agent": {
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4"
+      "model": "claude-opus-4.5"
     },
     "inline_assistant_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4"
+      "model": "claude-haiku-4.5"
     },
 
     "enable_feedback": false,
@@ -47,7 +47,7 @@
   "ui_font_weight": 400,
   "ui_font_family": "Roboto Flex",
 
-  "buffer_font_size": 14.5,
+  "buffer_font_size": 14,
   "buffer_font_weight": 400,
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_fallbacks": ["JetBrains Mono", ".ZedMono"],
@@ -94,8 +94,10 @@
     "dock": "right"
   },
 
-  "experimental.theme_overrides": {
-    "status_bar.background": "#3a1254"
+  "theme_overrides": {
+    "Catppuccin Macchiato": {
+      "status_bar.background": "#3a1254"
+    }
   },
 
   // ################################################################
@@ -144,9 +146,11 @@
     "dockerfile": true,
     "git-firefly": true,
     "html": true,
+    "helm": true,
     "ini": true,
     "lua": true,
     "make": true,
+    "proto": true,
     "terraform": true,
     "toml": true
   },

@@ -32,7 +32,7 @@ when = true
 
 [custom.kubens]
 style = 'bold red'
-command = 'kubectl config view --output "jsonpath={..namespace}"'
+command = 'kubectl config view --minify -o "jsonpath={..namespace}"'
 format = '[$output]($style)'
 when = true
 

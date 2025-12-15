@@ -47,3 +47,4 @@
     upgrade_all: true
   tags:
     - brew
+    - brew-cask
