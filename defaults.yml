@@ -84,6 +84,7 @@ all_brew_cask_packages:
   - readdle-spark
 
   # Media
+  - obs
   - spotify
   - vlc
 
@@ -93,7 +94,7 @@ all_brew_cask_packages:
   - zoom
 
   # Development tools
-  - docker
+  - docker-desktop
   - gitbutler
   - postman
   - visual-studio-code
