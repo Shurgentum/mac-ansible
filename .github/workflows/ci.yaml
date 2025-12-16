@@ -20,12 +20,11 @@ jobs:
           cache: pip
           python-version: "3.14"
 
-      - name: Install ansible-lint
+      - name: Install dependencies
         shell: bash
         run: |
-          pip install ansible ansible-lint
+          pip install -r requirements.txt
           ansible-galaxy collection install community.general
-
           ansible-lint --version
 
       - name: Run ansible-lint
