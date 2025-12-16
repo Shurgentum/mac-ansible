@@ -28,7 +28,7 @@
     - name: Find ther difference between installed apps and desired apps
       ansible.builtin.set_fact:
         app_ids__to_install: "{{ mas_install_apps | map(attribute='id') | difference(installed_app_ids) | list }}"
-        apps_ids_to_uninstall: "{{ installed_app_ids  | difference(mas_install_apps | map(attribute='id')) | list }}"
+        apps_ids_to_uninstall: "{{ installed_app_ids | difference(mas_install_apps | map(attribute='id')) | list }}"
       when: mas_list.rc == 0
 
     - name: Debug
