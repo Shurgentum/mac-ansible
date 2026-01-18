@@ -17,7 +17,7 @@
           - "System: {{ ansible_facts.system | default('Unknown') }}"
           - "Model: {{ ansible_facts.model | default('Unknown') }}"
           - "Architecture: {{ ansible_facts.architecture }}"
-          - "User: {{ ansible_user_id }}"
+          - "User: {{ ansible_facts.user_id }}"
 
     - name: Fail if not on MacOS
       ansible.builtin.fail:

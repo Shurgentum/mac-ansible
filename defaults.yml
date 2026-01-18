@@ -1,6 +1,6 @@
 ---
 # Dotfiles configuration
-dotfiles_dest: "{{ ansible_env.HOME }}/.dotfiles"
+dotfiles_dest: "{{ ansible_facts.env.HOME }}/.dotfiles"
 
 # Symlinks to create
 symlinks:

@@ -19,6 +19,7 @@ This playbook installs and configures most of the software I use on my Mac for w
           pyenv init > ~/.zshrc
           pyenv install 3
           pyenv global 3
+          pip3 install ansible
 
       </details>
 
