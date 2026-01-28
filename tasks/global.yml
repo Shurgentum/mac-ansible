@@ -2,7 +2,7 @@
 # Create necessary directories
 - name: Create .config directory structure in home
   ansible.builtin.file:
-    path: "{{ ansible_env.HOME }}/{{ item }}"
+    path: "{{ ansible_facts.env.HOME }}/{{ item }}"
     state: directory
     mode: "0755"
   loop:
@@ -14,7 +14,7 @@
 
 - name: Create SSH config directory with correct permissions
   ansible.builtin.file:
-    path: "{{ ansible_env.HOME }}/.ssh"
+    path: "{{ ansible_facts.env.HOME }}/.ssh"
     state: directory
     mode: "0700"
 

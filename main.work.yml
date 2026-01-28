@@ -6,7 +6,7 @@
   become: false
 
   vars_files:
-    - ./defaults.yml
+    - ./defaults.work.yml
     - ./vars/static.yml
 
   pre_tasks:

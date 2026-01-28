@@ -14,9 +14,6 @@ symlinks:
   # Zed editor
   - { src: "zed/keymap.json", dest: "$HOME/.config/zed/keymap.json" }
   - { src: "zed/settings.json", dest: "$HOME/.config/zed/settings.json" }
-  # GIT
-  # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Personal" }
-  # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Work" }
 
 # HomeBrew
 homebrew_tap_repos:
@@ -63,6 +60,7 @@ all_brew_packages:
   - gopls
   - golangci-lint
   - nvm
+  - php
   - pyenv
   - pyenv-virtualenv
   - ruff
@@ -74,30 +72,16 @@ all_brew_packages:
 all_brew_cask_packages:
   # System utilities
   - betterdisplay
-  - istat-menus
   - rectangle
-  # - unnaturalscrollwheels
-
-  # Productivity
-  - notchnook
-  - notion
-  - readdle-spark
-
-  # Media
-  - obs
-  - spotify
-  - vlc
 
   # Communication
   - slack
-  - telegram
   - zoom
 
   # Development tools
   - docker-desktop
   - gitbutler
   - postman
-  - visual-studio-code
   - wezterm
   - zed
 
@@ -109,30 +93,8 @@ all_brew_cask_packages:
   # Other
   - 1password
   - 1password-cli
-  - cloudflare-warp
-  - google-drive
-
-# MacBook-specific packages (only installed on MacBook models)
-macbook_brew_cask_packages:
-  # Battery management
-  - aldente
-  # - bartender
 
 # Mac App Store (MAS) configuration
-# Note: Requires being signed into the App Store for installations
-mas_install_apps:
-  # Free apps
-  - { id: "1440147259", name: "AdGuard for Safari" }
-  - { id: "409201541", name: "Apple Pages" }
-  - { id: "409203825", name: "Apple Numbers" }
-  - { id: "409183694", name: "Apple Keynote" }
-  - { id: "1437226581", name: "Horo timer" }
-  - { id: "571213070", name: "DaVinci Resolve" }
-
-  # Paid apps
-  - { id: "904280696", name: "Things 3" }
-  - { id: "1289583905", name: "Pixelmator Pro" }
-
 mas_uninstall_apps:
   - { id: "682658836", name: "GarageBand" }
   - { id: "408981434", name: "iMovie" }
@@ -152,23 +114,8 @@ dock_add:
   - name: "Notes"
     path: "/System/Applications/Notes.app"
 
-  - name: "Things"
-    path: "/Applications/Things3.app"
-
-  - name: "Spotify"
-    path: "/Applications/Spotify.app"
-
   - name: "Slack"
     path: "/Applications/Slack.app"
-
-  - name: "Telegram"
-    path: "/Applications/Telegram.app"
-
-  - name: "Pixelmator Pro"
-    path: "/Applications/Pixelmator\ Pro.app"
-
-  - name: "DaVinci Resolve"
-    path: "/Applications/DaVinci\ Resolve.app"
 
   - name: "WezTerm"
     path: "/Applications/WezTerm.app"
