@@ -28,12 +28,13 @@
   loop: "{{ dock_add | default([]) }}"
   loop_control:
     label: "{{ item.name | default(item.path) }}"
+    index_var: idx
   ansible.builtin.command:
     cmd: >-
       dockutil
       --add '{{ item.path }}'
       --label '{{ item.name }}'
-      --position '{{ item.pos }}'
+      --position '{{ idx + 1 }}'
       --no-restart
   when:
     - item.name is defined
@@ -63,13 +64,13 @@
 - name: Position configured Dock items.
   loop: "{{ dock_add }}"
   loop_control:
-    label: "{{ item.name }} : {{ item.pos }}"
+    label: "{{ idx + 1 }}: {{ item.name }}"
+    index_var: idx
   ansible.builtin.command:
-    cmd: dockutil --move '{{ item.name }}' --position '{{ item.pos }}' --no-restart
+    cmd: dockutil --move '{{ item.name }}' --position '{{ idx + 1 }}' --no-restart
   when:
     - item.name is defined
-    - item.pos is defined
-    - '"slot " + item.pos|string not in dock_item_positions.results[item.pos-1].stdout'
+    - '"slot " + (idx + 1)|string not in dock_item_positions.results[idx].stdout'
   register: dock_position_result
   changed_when: dock_position_result.rc == 0
   failed_when:

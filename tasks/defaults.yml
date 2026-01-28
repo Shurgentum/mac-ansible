@@ -7,7 +7,7 @@
 
 - name: Get checksum from .osx.sh.done file
   ansible.builtin.slurp:
-    src: "{{ ansible_env.HOME }}/.osx.sh.done"
+    src: "{{ ansible_facts.env.HOME }}/.osx.sh.done"
   register: osx_done_checksum
   ignore_errors: true
 
