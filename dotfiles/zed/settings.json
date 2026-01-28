@@ -14,21 +14,21 @@
   "agent": {
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-opus-4.5"
+      "model": "claude-opus-4.5",
     },
     "inline_assistant_model": {
       "provider": "copilot_chat",
-      "model": "claude-haiku-4.5"
+      "model": "claude-haiku-4.5",
     },
 
     "enable_feedback": false,
-    "profiles": {}
+    "profiles": {},
   },
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "copilot",
   },
   "edit_predictions": {
-    "mode": "eager"
+    "mode": "eager",
   },
 
   // ################################################################
@@ -39,7 +39,7 @@
   "theme": {
     "mode": "system",
     "light": "Catppuccin Latte",
-    "dark": "Catppuccin Macchiato"
+    "dark": "Catppuccin Macchiato",
   },
   "icon_theme": "Catppuccin Latte",
 
@@ -59,11 +59,11 @@
 
   "minimap": {
     "show": "auto",
-    "current_line_highlight": "all"
+    "current_line_highlight": "all",
   },
 
   "scrollbar": {
-    "show": "auto"
+    "show": "auto",
   },
 
   // Terminal settings
@@ -76,28 +76,28 @@
     "font_family": "JetBrainsMono Nerd Font",
     "font_fallbacks": ["JetBrains Mono", ".ZedMono"],
     "font_features": { "calt": true },
-    "line_height": { "custom": 1.45 }
+    "line_height": { "custom": 1.45 },
   },
 
   // Project panel
   "project_panel": {
     "dock": "left",
     "entry_spacing": "standard",
-    "indent_size": 15
+    "indent_size": 15,
   },
 
   "git": {
-    "blame": { "show_avatar": true }
+    "blame": { "show_avatar": true },
   },
   // Git panel
   "git_panel": {
-    "dock": "right"
+    "dock": "right",
   },
 
   "theme_overrides": {
     "Catppuccin Macchiato": {
-      "status_bar.background": "#3a1254"
-    }
+      "status_bar.background": "#3a1254",
+    },
   },
 
   // ################################################################
@@ -105,7 +105,7 @@
   // ################################################################
   "extend_comment_on_newline": false,
   "file_types": {
-    "Shell Script": ["*.zsh-theme"]
+    "Shell Script": ["*.zsh-theme"],
   },
   "languages": {
     "Python": {
@@ -113,15 +113,15 @@
       "format_on_save": "on",
       "formatter": [
         {
-          "code_action": "source.organizeImports.ruff"
+          "code_action": "source.organizeImports.ruff",
         },
         {
           "language_server": {
-            "name": "ruff"
-          }
-        }
-      ]
-    }
+            "name": "ruff",
+          },
+        },
+      ],
+    },
   },
 
   "lsp": {
@@ -129,10 +129,10 @@
       "initialization_options": {
         "settings": {
           "lineLength": 110,
-          "lint": { "extendSelect": ["I"] }
-        }
-      }
-    }
+          "lint": { "extendSelect": ["I"] },
+        },
+      },
+    },
   },
 
   // ################################################################
@@ -150,14 +150,15 @@
     "ini": true,
     "lua": true,
     "make": true,
+    "php": true,
     "proto": true,
     "terraform": true,
-    "toml": true
+    "toml": true,
   },
 
   // Send only crash reports
   "telemetry": {
     "diagnostics": true,
-    "metrics": false
-  }
+    "metrics": false,
+  },
 }
