@@ -57,7 +57,7 @@
     },
 
     {
-      "description": "Tilde on non-US(fn to revert)",
+      "description": "Tilde on non-US (fn to revert)",
       "manipulators": [
         {
           "type": "basic",
