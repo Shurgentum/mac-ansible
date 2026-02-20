@@ -24,16 +24,16 @@
     "enable_feedback": false,
     "profiles": {},
   },
-  "features": {
-    "edit_prediction_provider": "copilot",
-  },
   "edit_predictions": {
+    "provider": "copilot",
     "mode": "eager",
   },
 
   // ################################################################
   // UI customization
   // ################################################################
+
+  "text_rendering_mode": "subpixel",
 
   // Themes
   "theme": {
@@ -122,6 +122,11 @@
         },
       ],
     },
+    "YAML": {
+      "show_whitespaces": "all",
+      "auto_indent_on_paste": false,
+      "use_on_type_format": false,
+    },
   },
 
   "lsp": {
@@ -143,6 +148,7 @@
     "catppuccin": true,
     "catppuccin-icons": true,
 
+    "ansible": true,
     "dockerfile": true,
     "git-firefly": true,
     "html": true,
