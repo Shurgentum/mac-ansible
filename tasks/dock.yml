@@ -6,7 +6,7 @@
 
 - name: Get current dock configuration
   ansible.builtin.command:
-    cmd: dockutil --list
+    cmd: dockutil --list | awk -F'\t' '{print $1}'
   register: current_dock
   changed_when: false
   failed_when: false
