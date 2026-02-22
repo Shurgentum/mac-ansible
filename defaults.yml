@@ -63,6 +63,7 @@ all_brew_packages:
   - gopls
   - golangci-lint
   - nvm
+  - php
   - pyenv
   - pyenv-virtualenv
   - ruff
