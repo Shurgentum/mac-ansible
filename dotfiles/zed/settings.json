@@ -11,29 +11,67 @@
   // ################################################################
   // AI-related stuff
   // ################################################################
+  "edit_predictions": {
+    "provider": "sweep",
+    "mode": "eager",
+
+    // For some reason I couldn't make codestral to work yet
+    "codestral": {
+      "api_url": "https://codestral.mistral.ai/v1/fim/completions",
+      "model": "codestral-latest",
+    },
+
+    "sweep": {
+      "privacy_mode": true,
+    },
+  },
+
   "agent": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-opus-4.5",
+      "provider": "openrouter",
+      "model": "anthropic/claude-opus-4.6",
+      "enable_thinking": true,
     },
     "inline_assistant_model": {
-      "provider": "copilot_chat",
-      "model": "claude-haiku-4.5",
+      "provider": "openrouter",
+      "model": "anthropic/claude-haiku-4.6",
     },
+    "commit_message_model": {
+      "provider": "openrouter",
+      "model": "anthropic/claude-haiku-4.6",
+    },
+    "thread_summary_model": {
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4.6",
+    },
+
+    "favorite_models": [
+      {
+        "provider": "openrouter",
+        "model": "anthropic/claude-opus-4.6",
+        "enable_thinking": true,
+      },
+      {
+        "provider": "openrouter",
+        "model": "anthropic/claude-sonnet-4.6",
+        "enable_thinking": true,
+      },
+      {
+        "provider": "openrouter",
+        "model": "anthropic/claude-haiku-4.6",
+        "enable_thinking": false,
+      },
+    ],
 
     "enable_feedback": false,
     "profiles": {},
-  },
-  "features": {
-    "edit_prediction_provider": "copilot",
-  },
-  "edit_predictions": {
-    "mode": "eager",
   },
 
   // ################################################################
   // UI customization
   // ################################################################
+
+  "text_rendering_mode": "subpixel",
 
   // Themes
   "theme": {
@@ -54,16 +92,18 @@
   "buffer_font_features": { "calt": true },
   "buffer_line_height": "standard",
 
+  "tabs": {
+    "file_icons": true,
+    "close_position": "left",
+    "git_status": true,
+    "activate_on_close": "left_neighbour",
+  },
   // 3 digits is actually enough to display 4
   "gutter": { "min_line_number_digits": 3 },
 
   "minimap": {
     "show": "auto",
     "current_line_highlight": "all",
-  },
-
-  "scrollbar": {
-    "show": "auto",
   },
 
   // Terminal settings
@@ -103,10 +143,11 @@
   // ################################################################
   // Language-specific
   // ################################################################
-  "extend_comment_on_newline": false,
   "file_types": {
     "Shell Script": ["*.zsh-theme"],
   },
+
+  "extend_comment_on_newline": false,
   "languages": {
     "Python": {
       "language_servers": ["basedpyright", "ruff"],
@@ -121,6 +162,11 @@
           },
         },
       ],
+    },
+    "YAML": {
+      "show_whitespaces": "all",
+      "auto_indent_on_paste": false,
+      "use_on_type_format": false,
     },
   },
 
@@ -143,6 +189,7 @@
     "catppuccin": true,
     "catppuccin-icons": true,
 
+    "ansible": true,
     "dockerfile": true,
     "git-firefly": true,
     "html": true,

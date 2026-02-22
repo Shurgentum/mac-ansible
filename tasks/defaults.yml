@@ -25,6 +25,6 @@
     - name: Store osx.sh checksum
       ansible.builtin.copy:
         content: "{{ osx_script_stat.stat.checksum }}"
-        dest: "{{ ansible_env.HOME }}/.osx.sh.done"
+        dest: "{{ ansible_facts.env.HOME }}/.osx.sh.done"
         mode: "0644"
       when: osx_script_result.rc == 0
