@@ -161,7 +161,7 @@
       ],
     },
     "YAML": {
-      "show_whitespaces": "all",
+      "show_whitespaces": "boundary",
       "auto_indent_on_paste": false,
       "use_on_type_format": false,
     },
