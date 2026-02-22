@@ -12,11 +12,13 @@
   // AI-related stuff
   // ################################################################
   "edit_predictions": {
-    "provider": "codestral",
+    "provider": "zed",
+    "mode": "eager",
+
     "codestral": {
+      "api_url": "https://codestral.mistral.ai/v1/fim/completions",
       "model": "codestral-latest",
     },
-    "mode": "eager",
   },
 
   "agent": {
