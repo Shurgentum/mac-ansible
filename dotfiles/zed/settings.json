@@ -92,6 +92,12 @@
   "buffer_font_features": { "calt": true },
   "buffer_line_height": "standard",
 
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false,
+    "show_pinned_tabs_in_separate_row": true,
+  },
+
   "tabs": {
     "file_icons": true,
     "close_position": "left",
