@@ -187,19 +187,20 @@ dock_add:
 
 # Items to remove from dock
 dock_remove:
+  - "App Store"
+  - Apps
+  - Contacts
+  - FaceTime
+  - Freeform
+  - "iPhone Mirroring"
+  - Keynote
   - Launchpad
-  - Messages
   - Mail
   - Maps
-  - Photos
-  - FaceTime
-  - Contacts
-  - Reminders
-  - Freeform
-  - TV
+  - Messages
   - Music
-  - Pages
   - Numbers
-  - Keynote
-  - "App Store"
-  - "iPhone Mirroring"
+  - Pages
+  - Photos
+  - Reminders
+  - TV

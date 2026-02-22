@@ -26,13 +26,13 @@ disabled = true
 
 [custom.kubectx]
 style = 'bold blue'
-command = "echo \ue81d ${$(kubectl config current-context)##*/}"
+command = "echo \ue81d ${$(kubectl config current-context 2>/dev/null)##*/} "
 format = '[$output]($style)'
 when = true
 
 [custom.kubens]
 style = 'bold red'
-command = 'kubectl config view --minify -o "jsonpath={..namespace}"'
+command = 'kubectl config view --minify -o "jsonpath={..namespace} 2>/dev/null"'
 format = '[$output]($style)'
 when = true
 
