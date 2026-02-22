@@ -3,9 +3,6 @@
 // For information on how to configure Zed, see the Zed
 // documentation: https://zed.dev/docs/configuring-zedf
 //
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
 
 {
   // ################################################################
@@ -71,16 +68,6 @@
   // UI customization
   // ################################################################
 
-  "text_rendering_mode": "subpixel",
-
-  // Themes
-  "theme": {
-    "mode": "system",
-    "light": "Catppuccin Latte",
-    "dark": "Catppuccin Macchiato",
-  },
-  "icon_theme": "Catppuccin Latte",
-
   "ui_font_size": 16,
   "ui_font_weight": 400,
   "ui_font_family": "Roboto Flex",
@@ -97,19 +84,36 @@
     "show_tab_bar_buttons": false,
     "show_pinned_tabs_in_separate_row": true,
   },
-
   "tabs": {
     "file_icons": true,
     "close_position": "left",
     "git_status": true,
     "activate_on_close": "left_neighbour",
   },
+
   // 3 digits is actually enough to display 4
   "gutter": { "min_line_number_digits": 3 },
-
   "minimap": {
     "show": "auto",
     "current_line_highlight": "all",
+  },
+
+  "git": { "blame": { "show_avatar": true } },
+
+  // ################################################################
+  // Panels customization
+  // ################################################################
+
+  // Project panel
+  "project_panel": {
+    "dock": "left",
+    "entry_spacing": "standard",
+    "indent_size": 15,
+  },
+  "collaboration_panel": { "button": false },
+  // Git panel
+  "git_panel": {
+    "dock": "right",
   },
 
   // Terminal settings
@@ -125,27 +129,6 @@
     "line_height": { "custom": 1.45 },
   },
 
-  // Project panel
-  "project_panel": {
-    "dock": "left",
-    "entry_spacing": "standard",
-    "indent_size": 15,
-  },
-
-  "git": {
-    "blame": { "show_avatar": true },
-  },
-  // Git panel
-  "git_panel": {
-    "dock": "right",
-  },
-
-  "theme_overrides": {
-    "Catppuccin Macchiato": {
-      "status_bar.background": "#3a1254",
-    },
-  },
-
   // ################################################################
   // Language-specific
   // ################################################################
@@ -155,6 +138,14 @@
 
   "extend_comment_on_newline": false,
   "languages": {
+    "JSON": {
+      "show_whitespaces": "trailing",
+      "colorize_brackets": true,
+    },
+    "JSONC": {
+      "show_whitespaces": "trailing",
+      "colorize_brackets": true,
+    },
     "Python": {
       "language_servers": ["basedpyright", "ruff"],
       "format_on_save": "on",
@@ -190,6 +181,23 @@
   // ################################################################
   // General
   // ################################################################
+
+  // Themes
+  "icon_theme": "Catppuccin Latte",
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Frappé",
+  },
+  "theme_overrides": {
+    "Catppuccin Frappé": {
+      "status_bar.background": "#3a1254",
+    },
+    "Catppuccin Macchiato": {
+      "status_bar.background": "#3a1254",
+    },
+  },
+
   // Extensions
   "auto_install_extensions": {
     "catppuccin": true,
