@@ -19,25 +19,25 @@
         installed_app_ids: "{{ mas_list.stdout_lines | map('regex_replace', '^(\\d+)\\s+.*$', '\\1') | list }}"
       when: mas_list.rc == 0
 
-    - name: Set empty list if no apps installed
-      ansible.builtin.set_fact:
-        installed_app_ids: []
-      when: mas_list.rc != 0
+#     - name: Set empty list if no apps installed
+#       ansible.builtin.set_fact:
+#         installed_app_ids: []
+#       when: mas_list.rc != 0
 
-    # TODO: Unfinished
-    - name: Find ther difference between installed apps and desired apps
-      ansible.builtin.set_fact:
-        app_ids__to_install: "{{ mas_install_apps | map(attribute='id') | difference(installed_app_ids) | list }}"
-        apps_ids_to_uninstall: "{{ installed_app_ids | difference(mas_install_apps | map(attribute='id')) | list }}"
-      when: mas_list.rc == 0
+#     # TODO: Unfinished
+#     - name: Find ther difference between installed apps and desired apps
+#       ansible.builtin.set_fact:
+#         app_ids__to_install: "{{ mas_install_apps | map(attribute='id') | difference(installed_app_ids) | list }}"
+#         apps_ids_to_uninstall: "{{ installed_app_ids | difference(mas_install_apps | map(attribute='id')) | list }}"
+#       when: mas_list.rc == 0
 
-    - name: Debug
-      ansible.builtin.debug:
-        msg:
-          - "Installed app IDs: {{ installed_app_ids }}"
-          - "Apps to install (IDs): {{ app_ids__to_install | default('N/A') }}"
-          - "Apps to uninstall (IDs): {{ apps_ids_to_uninstall | default('N/A') }}"
-      when: mas_list.rc == 0
+#     - name: Debug
+#       ansible.builtin.debug:
+#         msg:
+#           - "Installed app IDs: {{ installed_app_ids }}"
+#           - "Apps to install (IDs): {{ app_ids__to_install | default('N/A') }}"
+#           - "Apps to uninstall (IDs): {{ apps_ids_to_uninstall | default('N/A') }}"
+#       when: mas_list.rc == 0
 
 - name: Install apps from App Store
   loop: "{{ mas_install_apps | default([]) }}"
