@@ -38,7 +38,7 @@
     },
     "commit_message_model": {
       "provider": "openrouter",
-      "model": "anthropic/claude-haiku-4.6",
+      "model": "anthropic/claude-haiku-4.5",
     },
     "thread_summary_model": {
       "provider": "openrouter",
@@ -58,7 +58,7 @@
       },
       {
         "provider": "openrouter",
-        "model": "anthropic/claude-haiku-4.6",
+        "model": "anthropic/claude-haiku-4.5",
         "enable_thinking": false,
       },
     ],
