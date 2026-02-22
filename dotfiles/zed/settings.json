@@ -199,6 +199,7 @@
     "make": true,
     "php": true,
     "proto": true,
+    "sql": true,
     "terraform": true,
     "toml": true,
   },
