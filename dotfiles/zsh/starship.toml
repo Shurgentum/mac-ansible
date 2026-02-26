@@ -29,12 +29,14 @@ style = 'bold blue'
 command = "echo \ue81d ${$(kubectl config current-context 2>/dev/null)##*/} "
 format = '[$output]($style)'
 when = true
+ignore_timeout = true
 
 [custom.kubens]
 style = 'bold red'
-command = 'kubectl config view --minify -o "jsonpath={..namespace} 2>/dev/null"'
+command = 'kubectl config view --minify -o "jsonpath={..namespace}" 2>/dev/null'
 format = '[$output]($style)'
 when = true
+ignore_timeout = true
 
 
 [aws]
