@@ -15,8 +15,7 @@ symlinks:
   - { src: "zed/keymap.json", dest: "$HOME/.config/zed/keymap.json" }
   - { src: "zed/settings.json", dest: "$HOME/.config/zed/settings.json" }
   # GIT
-  # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Personal" }
-  # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Work" }
+  - { src: ".gitconfig/osx.gitignore", dest: "$HOME/.gitignore" }
 
 # HomeBrew
 homebrew_tap_repos:
@@ -24,13 +23,13 @@ homebrew_tap_repos:
 
 all_brew_packages:
   # Basic dependencies and libraries
+  - libb2
   - openssl
   - readline
   - sqlite3
+  - tcl-tk@8
   - xz
   - zlib
-  - tcl-tk@8
-  - libb2
   - zstd
 
   # Shell customization & utilities
@@ -41,36 +40,35 @@ all_brew_packages:
   - zsh-syntax-highlighting
 
   # Utilities
-  - awscli
   - argocd
+  - awscli
   - gh
   - htop
   - jq
-  - yq
   - sops
   - watch
   - wget
+  - yq
 
   # Kubernetes tools
-  - kubernetes-cli
-  - kubectx
   - helm
   - helm-ls
+  - kubectx
+  - kubernetes-cli
   - minikube
 
   # Programming tools
   - go
-  - gopls
   - golangci-lint
+  - gopls
   - nvm
   - php
-  - pyenv
-  - pyenv-virtualenv
   - ruff
+  - uv
 
   # IaaC tools
-  - tfswitch
   - terragrunt
+  - tfswitch
 
 all_brew_cask_packages:
   # System utilities
