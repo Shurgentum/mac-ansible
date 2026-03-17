@@ -9,12 +9,11 @@
   // AI-related stuff
   // ################################################################
   "edit_predictions": {
-    "provider": "sweep",
+    "provider": "zed",
     "mode": "eager",
 
-    // For some reason I couldn't make codestral to work yet
     "codestral": {
-      "api_url": "https://codestral.mistral.ai/v1/fim/completions",
+      "max_tokens": 150,
       "model": "codestral-latest",
     },
 
@@ -58,6 +57,11 @@
         "model": "anthropic/claude-haiku-4.5",
         "enable_thinking": false,
       },
+      {
+        "provider": "openrouter",
+        "model": "minimax/minimax-m2.5",
+        "enable_thinking": false,
+      },
     ],
 
     "enable_feedback": false,
@@ -89,6 +93,7 @@
     "close_position": "left",
     "git_status": true,
     "activate_on_close": "left_neighbour",
+    "show_diagnostics": "errors",
   },
 
   // 3 digits is actually enough to display 4
@@ -99,6 +104,13 @@
   },
 
   "git": { "blame": { "show_avatar": true } },
+
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+      "max_severity": null, // same values as the `diagnostics_max_severity` from the editor settings
+    },
+  },
 
   // ################################################################
   // Panels customization

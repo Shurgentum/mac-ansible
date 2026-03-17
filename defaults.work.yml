@@ -14,10 +14,13 @@ symlinks:
   # Zed editor
   - { src: "zed/keymap.json", dest: "$HOME/.config/zed/keymap.json" }
   - { src: "zed/settings.json", dest: "$HOME/.config/zed/settings.json" }
-
+  # GIT
+  - { src: "git/osx/global.gitignore", dest: "$HOME/.gitignore" }
 # HomeBrew
 homebrew_tap_repos:
   - warrensbox/tap
+
+# add variable for laptop only brew packages
 
 all_brew_packages:
   # Basic dependencies and libraries

@@ -15,8 +15,7 @@ symlinks:
   - { src: "zed/keymap.json", dest: "$HOME/.config/zed/keymap.json" }
   - { src: "zed/settings.json", dest: "$HOME/.config/zed/settings.json" }
   # GIT
-  # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Personal" }
-  # - { src: ".gitconfig/osx.gitconfig", dest: "$HOME/.config/gitconfigs/Work" }
+  - { src: ".gitconfig/osx.gitignore", dest: "$HOME/.gitignore" }
 
 # HomeBrew
 homebrew_tap_repos:
