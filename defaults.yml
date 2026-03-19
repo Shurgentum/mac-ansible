@@ -43,6 +43,7 @@ all_brew_packages:
   - argocd
   - awscli
   - gh
+  - glab
   - htop
   - jq
   - sops

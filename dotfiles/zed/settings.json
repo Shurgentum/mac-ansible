@@ -30,7 +30,7 @@
     },
     "inline_assistant_model": {
       "provider": "openrouter",
-      "model": "anthropic/claude-haiku-4.6",
+      "model": "anthropic/claude-haiku-4.5",
     },
     "commit_message_model": {
       "provider": "openrouter",
@@ -108,7 +108,7 @@
   "diagnostics": {
     "inline": {
       "enabled": true,
-      "max_severity": null, // same values as the `diagnostics_max_severity` from the editor settings
+      "max_severity": "all",
     },
   },
 
