@@ -10,7 +10,7 @@ $git_branch\
 $fill\
 ${custom.kubectx}(:${custom.kubens})\
 $aws
-$character\
+  $character\
 """
 continuation_prompt = '▶ '
 
@@ -26,7 +26,7 @@ disabled = true
 
 [custom.kubectx]
 style = 'bold blue'
-command = "echo \ue81d ${$(kubectl config current-context 2>/dev/null)##*/} "
+command = "echo ${$(kubectl config current-context 2>/dev/null)##*/}"
 format = '[$output]($style)'
 when = true
 ignore_timeout = true

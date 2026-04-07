@@ -45,6 +45,7 @@ all_brew_packages:
   - argocd
   - gh
   - glab
+  - go-task
   - htop
   - jq
   - yq
@@ -72,6 +73,7 @@ all_brew_packages:
   # IaaC tools
   - tfswitch
   - terragrunt
+  - terraform-ls
 
 all_brew_cask_packages:
   # System utilities
