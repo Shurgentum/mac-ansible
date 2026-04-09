@@ -1,6 +1,8 @@
 # Executables
 path+=("$HOME/bin")
 path+=("$HOME/go/bin")
+path+=("$HOME/.local/bin")
+path+=("$HOME/.local/share/bin")
 
 # Global Environment Variables
 
