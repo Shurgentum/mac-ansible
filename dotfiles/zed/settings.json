@@ -16,13 +16,10 @@
       "max_tokens": 150,
       "model": "codestral-latest",
     },
-
-    "sweep": {
-      "privacy_mode": true,
-    },
   },
 
   "agent": {
+    "dock": "right",
     "show_turn_stats": true,
     "use_modifier_to_send": true,
     "default_model": {
@@ -57,11 +54,6 @@
       {
         "provider": "openrouter",
         "model": "anthropic/claude-haiku-4.5",
-        "enable_thinking": false,
-      },
-      {
-        "provider": "openrouter",
-        "model": "minimax/minimax-m2.5",
         "enable_thinking": false,
       },
     ],
@@ -126,6 +118,9 @@
     "dock": "left",
     "entry_spacing": "standard",
     "indent_size": 15,
+  },
+  "outline_panel": {
+    "dock": "left",
   },
   "collaboration_panel": { "button": false },
   // Git panel
@@ -228,6 +223,7 @@
     "catppuccin-icons": true,
 
     "ansible": true,
+    "deno": true,
     "dockerfile": true,
     "git-firefly": true,
     "html": true,
