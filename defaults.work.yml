@@ -34,6 +34,8 @@ all_brew_packages:
   - zstd
 
   # Shell customization & utilities
+  - bat
+  - eza
   - fastfetch
   - starship
   - zsh-autosuggestions
@@ -66,8 +68,6 @@ all_brew_packages:
   - golangci-lint
   - nvm
   - php
-  - pyenv
-  - pyenv-virtualenv
   - ruff
 
   # IaaC tools

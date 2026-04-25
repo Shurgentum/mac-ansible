@@ -33,6 +33,8 @@ all_brew_packages:
   - zstd
 
   # Shell customization & utilities
+  - bat
+  - eza
   - fastfetch
   - starship
   - zsh-autosuggestions
@@ -43,6 +45,7 @@ all_brew_packages:
   - argocd
   - awscli
   - gh
+  - gitbutler
   - glab
   - go-task
   - htop
@@ -60,6 +63,7 @@ all_brew_packages:
   - minikube
 
   # Programming tools
+  - deno
   - go
   - golangci-lint
   - gopls
@@ -97,6 +101,7 @@ all_brew_cask_packages:
 
   # Development tools
   - docker-desktop
+  - flutter
   - gitbutler
   - postman
   - visual-studio-code
@@ -132,6 +137,7 @@ mas_install_apps:
   - { id: "1236045954", name: "Canary Mail" }
   - { id: "571213070", name: "DaVinci Resolve" }
   - { id: "1437226581", name: "Horo timer" }
+  - { id: "497799835", name: "XCode" }
 
   # Paid apps
   - { id: "1289583905", name: "Pixelmator Pro" }
